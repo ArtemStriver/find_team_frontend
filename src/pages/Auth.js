@@ -1,25 +1,36 @@
-import React, {Component, useState} from 'react';
+import React, {FC, useContext, useState} from 'react';
+import {Context} from "../index";
 
-class Auth extends Component {
-    render() {
-        // const [email, setEmail] = useState("");
+const LoginForm: FC = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const {store} = useContext(Context);
 
-        return (
-            <>
-            <div>
-                <form className="login">
-                    <h2>Войти в аккаунт</h2>
-                    <input type="text" className="form-control" name='username' placeholder="Username"/><br/>
-                    <input type="password" className="form-control" name='password' placeholder="Password"/><br/><br/>
-                    <button type="submit" className="btn btn-success">Войти</button>
-                    <br/><br/>
-                    <a href="">Забыли пароль?</a> или <a
-                    href="/register">Регистрация</a>
-                </form>
-            </div>
-            </>
-        );
-    }
+    return (
+        <>
+        <div>
+            <form className="login">
+                <h2>Войти в аккаунт</h2>
+                <input
+                    id="email"
+                    onChange={e => setEmail(e.target.value)}
+                    value={email}
+                    type="text"
+                    placeholder="Email"/>
+                <input
+                    id="passwoed"
+                    onChange={e => setPassword(e.target.value)}
+                    value={password}
+                    autoComplete="on"
+                    type="password"
+                    placeholder="Password"/>
+                <button type="button" onClick={() => store.login(email, password)}>Логин</button>
+                <button>Регистрация</button>
+                <br/><br/>
+            </form>
+        </div>
+        </>
+    );
 }
 
-export default Auth;
+export default LoginForm;
