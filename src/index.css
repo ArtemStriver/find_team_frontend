@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,414;1,414&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    color: #222;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 50px auto;
+}
+
+header a {
+    text-decoration: none;
+    color: #222;
+}
+
+header .nav {
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+}
+
+header .logo {
+    font-weight: 900;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+header ul.nav-list {
+    margin-top: 20px;
+    list-style: none;
+}
+
+header ul.nav-list li {
+    display: inline;
+    margin: 55px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: opacity 400ms ease;
+}
+
+header ul.nav-list li:hover {
+    opacity: 0.5;
+}
+
+header .login-button {
+    display: inline-block;
+    color: #e0e0e0;
+    margin-top: 5px;
+    background: #222;
+    padding: 10px 45px;
+    font-size: 21px;
+    line-height: 35px;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+header .presentation {
+    /*!*background: url("");*! TODO здесь организовать картинку логотипа*/
+}
+
+footer {
+    text-align: center;
+    margin-top: 100px;
+}
