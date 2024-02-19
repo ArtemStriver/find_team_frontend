@@ -1,7 +1,7 @@
 import api from "../http/API";
 
-export default class UserService {
-    static fetchUsers() {
+export default class TeamService {
+    static getTeams() {
         return api.get("/profile/teams")
     }
 }

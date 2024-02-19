@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
+import {Context} from "../index";
+import {observer} from "mobx-react-lite";
 
-export default function Header() {
+export default observer(function Header() {
+    const {store} = useContext(Context)
     return (
         <header>
             <div className="nav">
@@ -10,9 +13,13 @@ export default function Header() {
                     <li><a href="/teams">Лайфстайл</a></li>
                     <li><a href="/teams">Спорт</a></li>
                 </ul>
-                <a href="/auth" className="login-button">Вход</a>
+                {!store.isAuth ?
+                    <a href="/login" className="login-button">Вход</a>
+                    :
+                    <button onClick={() => store.logout()}>Выход</button>
+                }
             </div>
             <div className="presentation"></div>
         </header>
     )
-}
+})
