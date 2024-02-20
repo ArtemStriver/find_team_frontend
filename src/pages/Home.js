@@ -1,15 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {observer} from "mobx-react-lite";
 
-class Home extends Component {
-    render() {
-        return (
-            <>
+const Home = observer(() => {
+    return (
+        <>
             <div>
                 Hello Home
             </div>
-            </>
-        );
-    }
-}
+        </>
+    );
+});
 
 export default Home;

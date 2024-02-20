@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {observer} from "mobx-react-lite";
 
-class Teams extends Component {
-    render() {
-        return (
-            <>
-            <div>
-                All Teams
-            </div>
-            </>
-        );
-    }
-}
+
+const Teams = observer(() => {
+    return (
+        <>
+        <div>
+            All Teams
+        </div>
+        </>
+    );
+});
 
 export default Teams;

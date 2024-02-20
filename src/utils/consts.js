@@ -1,0 +1,5 @@
+export const HOME_ROUTE = "/"
+export const LOGIN_ROUTE = "/login"
+export const REGISTER_ROUTE = "/register"
+export const TEAMS_ROUTE = "/teams"
+export const TEAM_ROUTE = "/team"
