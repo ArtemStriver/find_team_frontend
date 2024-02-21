@@ -23,7 +23,6 @@ const LoginForm = observer(() => {
             alert(e)
         }
     }
-
     return (
         <>
             <div>

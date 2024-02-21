@@ -25,7 +25,6 @@ const RegisterForm = observer(() => {
             alert(e)
         }
     }
-
     return (
         <>
         <div>

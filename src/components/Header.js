@@ -26,10 +26,10 @@ const Header = observer(() => {
                     <li><a href="/teams">Спорт</a></li>
                 </ul>
                 {!user.isAuth ?
+                    // TODO переделать под кнопку, настроить стили
                     <a href="/login" className="login-button">Вход</a>
                     :
                     <div>
-                        {/*<a href="" className="login-button">Профиль</a>*/}
                         <button onClick={() => logOut()}>Выход</button>
                     </div>
                 }

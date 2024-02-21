@@ -17,6 +17,7 @@ const authInterceptor = config => {
 
 api.interceptors.request.use(authInterceptor)
 
+// TODO надо реализовать, но не горит.
 // authApi.interceptors.response.use((config) => {
 //     return config;
 // }, async (error) => {
