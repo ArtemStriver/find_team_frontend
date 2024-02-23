@@ -44,36 +44,172 @@ header ul.nav-list li {
     margin: 55px;
     font-size: 22px;
     cursor: pointer;
-    transition: opacity 400ms ease;
+    transition: opacity 300ms ease;
 }
 
 header ul.nav-list li:hover {
     opacity: 0.5;
 }
 
-header .login-button {
+header .log-in-main-button, .log-out-main-button {
     display: inline-block;
     color: #e0e0e0;
     margin-top: 5px;
     background: #222;
-    padding: 10px 45px;
+    width: 150px;
+    height: 55px;
     font-size: 21px;
+    line-height: 35px;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: opacity 300ms ease;
+}
+
+header .log-in-main-button:hover, .log-out-main-button:hover {
+    opacity: 0.8;
+}
+
+header .log-out-main-button {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+header .presentation {
+    /*!*background: url("");*! TODO здесь организовать картинку логотипа*/
+}
+
+.home-page {
+    width: 1280px;
+    margin: 50px auto;
+    display: inline-block;
+    text-align: center;
+}
+
+.create-team-button {
+    display: inline-block;
+    color: #e0e0e0;
+    margin-top: 50px;
+    background: #222;
+    width: 150px;
+    height: 55px;
+    font-size: 21px;
+    line-height: 35px;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: opacity 300ms ease;
+}
+
+.form-page {
+    width: 1280px;
+    margin: 50px auto;
+    display: block;
+    text-align: center;
+}
+
+.some-form {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.some-input {
+    display: block;
+    width: 250px;
+    height: 40px;
+    margin: 15px;
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.login-button {
+    display: inline-block;
+    color: #e0e0e0;
+    margin: 20px auto;
+    background: #222;
+    width: 230px;
+    height: 35px;
+    font-size: 20px;
     line-height: 35px;
     border: none;
     border-radius: 12px;
     text-decoration: none;
 }
 
-header .presentation {
-    /*!*background: url("");*! TODO здесь организовать картинку логотипа*/
+.form-page a {
+    display: block;
+    margin: 30px;
+    padding: 10px;
+    text-decoration: none;
 }
+
+.teams_page {
+    width: 1280px;
+    margin: 50px auto;
+    display: block;
+    text-align: center;
+}
+
+.team_list {
+    column-count: 3;
+    overflow: auto;
+    margin: 50px auto;
+}
+
 .team_item_card {
-    margin: 50px 0;
-    width: 250px;
-    height: 250px;
+    display: block;
+    margin-bottom: 40px;
+    width: 400px;
+    height: 300px;
+    font-size: 23px;
+    font-weight: 500;
+    background-size: cover;
+    background: url("img/default_image.jpg") no-repeat center center;
+    border-radius: 25px;
+    border: 1px solid #333;
+}
+
+.team_item-title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 35px;
+}
+
+.team_item-description {
+    text-align: left;
+    margin-top: 90px;
+    padding-left: 10px;
+}
+
+.team_item-type {
+    text-align: right;
+    padding-right: 15px;
+    margin-top: 30px;
+}
+
+.team_page {
+    width: 1280px;
+    display: flex;
+}
+
+.team_image {
+    margin: 5px 0;
+    width: 350px;
+    height: 350px;
     background-size: cover;
     background: url("img/default_image.jpg") no-repeat center center;
 }
+
 footer {
     text-align: center;
     margin-top: 100px;

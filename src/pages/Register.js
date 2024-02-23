@@ -27,39 +27,45 @@ const RegisterForm = observer(() => {
     }
     return (
         <>
-        <div>
-            <form className="login">
-                <h2>Войти в аккаунт</h2>
-                <input
-                    id="username"
-                    onChange={e => setUsername(e.target.value)}
-                    value={username}
-                    type="text"
-                    placeholder="Username"/>
-                <input
-                    id="email"
-                    onChange={e => setEmail(e.target.value)}
-                    value={email}
-                    type="text"
-                    placeholder="Email"/>
-                <input
-                    id="hashed_password"
-                    onChange={e => setHashedPassword(e.target.value)}
-                    value={hashed_password}
-                    autoComplete="on"
-                    type="password"
-                    placeholder="Password"/>
-                <input
-                    id="confirmed_password"
-                    onChange={e => setConfirmedPassword(e.target.value)}
-                    value={confirmed_password}
-                    autoComplete="on"
-                    type="password"
-                    placeholder="Confirme password"/>
-                <button type="button" onClick={signUp}>Регистрация</button>
-                <br/><br/>
-            </form>
-        </div>
+            <div className="form-page">
+                <h2>Рагистрация</h2>
+                <form className="some-form">
+                    <input
+                        className="some-input"
+                        id="username"
+                        onChange={e => setUsername(e.target.value)}
+                        value={username}
+                        type="text"
+                        placeholder="Username"/>
+                    <input
+                        className="some-input"
+                        id="email"
+                        onChange={e => setEmail(e.target.value)}
+                        value={email}
+                        type="text"
+                        placeholder="Email"/>
+                    <input
+                        className="some-input"
+                        id="hashed_password"
+                        onChange={e => setHashedPassword(e.target.value)}
+                        value={hashed_password}
+                        autoComplete="on"
+                        type="password"
+                        placeholder="Password"/>
+                    <input
+                        className="some-input"
+                        id="confirmed_password"
+                        onChange={e => setConfirmedPassword(e.target.value)}
+                        value={confirmed_password}
+                        autoComplete="on"
+                        type="password"
+                        placeholder="Confirme password"/>
+                </form>
+                <br/>
+                <button className="login-button" type="button" onClick={signUp}>Регистрация</button>
+                <br/>
+                <a href="/login">Логин</a>
+            </div>
         </>
     );
 });

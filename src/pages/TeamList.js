@@ -7,7 +7,7 @@ const TeamList = observer(() => {
     const {team} = useContext(Context)
 
     return (
-        <div>
+        <div className="team_list">
             {team.teams.map(team =>
                 <TeamItem key={team.id} team={team}/>
             )}

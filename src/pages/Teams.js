@@ -6,7 +6,7 @@ import TeamList from "./TeamList";
 const Teams = observer(() => {
     return (
         <>
-        <div>
+        <div className="teams_page">
             <h1>All Teams</h1>
             <TeamList/>
         </div>

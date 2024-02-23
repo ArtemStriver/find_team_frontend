@@ -2,9 +2,12 @@ import React, {useContext} from "react";
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 import {logout} from "../http/userAPI";
+import {useNavigate} from "react-router-dom";
+import {LOGIN_ROUTE} from "../utils/consts";
 
 const Header = observer(() => {
     const {user} = useContext(Context)
+    const navigate = useNavigate()
     const logOut = async () => {
         try {
             await logout();
@@ -27,10 +30,11 @@ const Header = observer(() => {
                 </ul>
                 {!user.isAuth ?
                     // TODO переделать под кнопку, настроить стили
-                    <a href="/login" className="login-button">Вход</a>
+                    <button className="log-in-main-button" onClick={() => navigate(LOGIN_ROUTE)}>Вход</button>
                     :
                     <div>
-                        <button onClick={() => logOut()}>Выход</button>
+                        <button
+                            className="log-out-main-button" onClick={() => logOut()}>Выход</button>
                     </div>
                 }
             </div>

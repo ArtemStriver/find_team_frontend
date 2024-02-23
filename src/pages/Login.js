@@ -25,26 +25,29 @@ const LoginForm = observer(() => {
     }
     return (
         <>
-            <div>
+            <div className="form-page">
                 <h2>Войти в аккаунт</h2>
-                <form className="login">
+                <form className="some-form">
                     <input
+                        className="some-input"
                         id="email"
                         onChange={e => setEmail(e.target.value)}
                         value={email}
                         type="text"
                         placeholder="Email"/>
                     <input
+                        className="some-input"
                         id="passwoed"
                         onChange={e => setPassword(e.target.value)}
                         value={password}
                         autoComplete="on"
                         type="password"
                         placeholder="Password"/>
-                    <button type="button" onClick={signIn}>Логин</button>
-                    <a href="/register">Регистрация</a>
-                    <br/><br/>
                 </form>
+                <br/>
+                <button className="login-button" type="button" onClick={signIn}>Логин</button>
+                <br/>
+                <a href="/register">Регистрация</a>
             </div>
         </>
     );
