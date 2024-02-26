@@ -3,12 +3,13 @@ import {Context} from "../index";
 import {useNavigate} from "react-router-dom";
 import {HOME_ROUTE} from "../utils/consts";
 import {register} from "../http/userAPI";
+import {createTeam} from "../http/teamAPI";
 
 const CreateTeam = () => {
     const [title, setTitle] = useState("");
     const [typeTeam, setTypeTeam] = useState("");
     const [contacts, setContacts] = useState("");
-    const [number_of_members, setNumberOfMembers] = useState("");
+    const [number_of_members, setNumberOfMembers] = useState(1);
     const [description, setDescription] = useState("");
     const [deadline, setDeadline] = useState("");
     const [tags, setTags] = useState("");
@@ -16,12 +17,13 @@ const CreateTeam = () => {
 
     const navigate = useNavigate()
 
-    const createTeam = async () => {
+    const addTeam = async () => {
         try {
             // const response = await create_team
+            await createTeam(title, typeTeam, number_of_members, contacts, description, tags, deadline)
             navigate(HOME_ROUTE)
         } catch (e) {
-            alert(e)
+            console.log(e)
         }
     }
 
@@ -87,7 +89,7 @@ const CreateTeam = () => {
                 {/*    type="file"*/}
                 {/*    placeholder="Team image"/><br/><br/>*/}
                 <br/><br/>
-                <button className="login-button" type="button" onClick={createTeam}>Создать команду</button>
+                <button className="login-button" type="button" onClick={addTeam}>Создать команду</button>
                 <br/><br/>
             </form>
         </div>

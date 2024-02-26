@@ -15,7 +15,7 @@ const authInterceptor = config => {
     return config;
 }
 
-api.interceptors.request.use(authInterceptor)
+authApi.interceptors.request.use(authInterceptor)
 
 // TODO надо реализовать, но не горит.
 // authApi.interceptors.response.use((config) => {
@@ -27,7 +27,7 @@ api.interceptors.request.use(authInterceptor)
 //             const response = await axios.get(
 //                 "http://127.0.0.1:8000/auth/refresh",
 //                 {withCredentials: true})
-//             localStorage.setItem("token", "OK")
+//             localStorage.setItem("token", response.data.access_token)
 //             return api.request(originRequest)
 //         } catch (e) {
 //             console.log(e)

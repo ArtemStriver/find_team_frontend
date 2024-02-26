@@ -168,6 +168,7 @@ header .presentation {
 
 .team_item_card {
     display: block;
+    break-inside: avoid;
     margin-bottom: 40px;
     width: 400px;
     height: 300px;
