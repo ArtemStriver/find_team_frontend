@@ -8,6 +8,7 @@ const Home = observer(() => {
     const navigate = useNavigate()
     const {user} = useContext(Context)
 
+
     return (
         <>
             <div className="home-page">

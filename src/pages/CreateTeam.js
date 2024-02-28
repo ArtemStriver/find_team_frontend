@@ -1,8 +1,6 @@
-import React, {useContext, useState} from 'react';
-import {Context} from "../index";
+import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {HOME_ROUTE} from "../utils/consts";
-import {register} from "../http/userAPI";
 import {createTeam} from "../http/teamAPI";
 
 const CreateTeam = () => {
@@ -39,6 +37,7 @@ const CreateTeam = () => {
                     type="text"
                     placeholder="Title"/>
                 <select
+                     // TODO кнопка меняет цвет при выборе типа команды
                     className="some-input"
                     id="typeTeam"
                     onChange={e => setTypeTeam(e.target.value)}

@@ -6,10 +6,12 @@ import {observer} from "mobx-react-lite";
 import AppRouter from "./components/AppRouter";
 import {Context} from "./index";
 import {check} from "./http/userAPI";
+import {getMyTeams, getTeams, getTeamsMyParticipation} from "./http/teamAPI";
 
 
 const App = observer(() => {
     const {user} = useContext(Context)
+    const {team} = useContext(Context)
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
@@ -18,6 +20,18 @@ const App = observer(() => {
                 user.setUser(data);
             })
         }
+    }, [])
+
+    useEffect(() => {
+        getTeams().then(data => team.setTeams(data))
+    }, [])
+
+    useEffect(() => {
+        getMyTeams().then(data => team.setMyTeams(data))
+    }, [])
+
+    useEffect(() => {
+        getTeamsMyParticipation().then(data => team.setMyTeamsParticipation(data))
     }, [])
 
 

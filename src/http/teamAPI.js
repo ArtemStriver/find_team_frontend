@@ -1,5 +1,4 @@
 import {api, authApi} from "./index";
-import axios from "axios";
 
 
 export const createTeam = async (
@@ -28,3 +27,14 @@ export const getTeams = async () => {
 export const getOneTeams = async (id) => {
     return await authApi.get("/find/team/" + id)
 }
+
+export const getMyTeams = async () => {
+    const {data} = await authApi.get("/profile/my_teams")
+    return data
+}
+
+export const getTeamsMyParticipation  = async () => {
+    const {data} = await authApi.get("/profile/teams")
+    return data
+}
+

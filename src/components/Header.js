@@ -3,17 +3,20 @@ import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 import {logout} from "../http/userAPI";
 import {useNavigate} from "react-router-dom";
-import {LOGIN_ROUTE} from "../utils/consts";
+import {HOME_ROUTE, LOGIN_ROUTE, PROFILE_ROUTE} from "../utils/consts";
 
 const Header = observer(() => {
     const {user} = useContext(Context)
     const navigate = useNavigate()
+
     const logOut = async () => {
         try {
+            alert("Вы вышли из аккаунта")
             await logout();
             localStorage.removeItem("token");
             user.setUser({})
             user.setIsAuth(false);
+            navigate(HOME_ROUTE)
         } catch (e) {
             alert(e)
         }
@@ -34,7 +37,12 @@ const Header = observer(() => {
                     :
                     <div>
                         <button
-                            className="log-out-main-button" onClick={() => logOut()}>Выход</button>
+                            className="log-in-main-button"
+                            onClick={() => navigate(PROFILE_ROUTE + "/" + user.user.id)}>Профиль
+                        </button>
+                        <button
+                            className="log-out-main-button" onClick={() => logOut()}>Выход
+                        </button>
                     </div>
                 }
             </div>

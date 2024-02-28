@@ -1,5 +1,4 @@
-import React, {useContext, useState} from 'react';
-import {Context} from "../index";
+import React, {useState} from 'react';
 import {observer} from "mobx-react-lite";
 import {register} from "../http/userAPI";
 import {useNavigate} from "react-router-dom";
@@ -11,15 +10,12 @@ const RegisterForm = observer(() => {
     const [email, setEmail] = useState("");
     const [hashed_password, setHashedPassword] = useState("");
     const [confirmed_password, setConfirmedPassword] = useState("");
-    const {user} = useContext(Context);
     const navigate = useNavigate()
 
     const signUp = async () => {
         try {
-            const response = await register(username, email, hashed_password, confirmed_password)
-            localStorage.setItem('token', response.data.access_token)
-            user.setUser(response.data.user)
-            user.setIsAuth(true)
+            await register(username, email, hashed_password, confirmed_password)
+            alert("Вам на почту отправлено письмо с ссылкой, перейдите по ней для подтверждения аккаунта.")
             navigate(HOME_ROUTE)
         } catch (e) {
             alert(e)

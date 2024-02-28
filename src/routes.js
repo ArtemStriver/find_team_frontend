@@ -1,10 +1,19 @@
-import {CREATE_TEAM_ROUTE, HOME_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE, TEAM_ROUTE, TEAMS_ROUTE} from "./utils/consts";
+import {
+    CREATE_TEAM_ROUTE,
+    HOME_ROUTE,
+    LOGIN_ROUTE,
+    PROFILE_ROUTE,
+    REGISTER_ROUTE,
+    TEAM_ROUTE,
+    TEAMS_ROUTE
+} from "./utils/consts";
 import Teams from "./pages/Teams";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import TeamPage from "./pages/TeamPage";
 import CreateTeam from "./pages/CreateTeam";
+import Profile from "./pages/Profile"
 
 export const authRoutes = [
     {
@@ -14,7 +23,11 @@ export const authRoutes = [
     {
         path: CREATE_TEAM_ROUTE,
         Component: CreateTeam
-    }
+    },
+    {
+        path: PROFILE_ROUTE + "/:id",
+        Component: Profile
+    },
 ]
 
 export const publicRoutes = [

@@ -12,7 +12,7 @@ export const login = async (email, password) => {
 export const check = async () => {
     try {
         const response = await axios.get(
-            "http://localhost:8080/auth/refresh",
+            "http://localhost:8000/auth/refresh",
             {withCredentials: true})
         localStorage.setItem('token', response.data.access_token)
         return response.data.user
