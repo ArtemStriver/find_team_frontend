@@ -34,7 +34,21 @@ export const getMyTeams = async () => {
 }
 
 export const getTeamsMyParticipation  = async () => {
-    const {data} = await authApi.get("/profile/teams")
+    const {data} = await authApi.get("/profile/teams_i_am_on")
     return data
 }
 
+export const getApplicationList = async (team_id) => {
+    const {data} = await authApi.get("/team/applications_list?team_id=" + team_id)
+    return data
+}
+
+export const joinInTeam = async (team_id, cover_letter) => {
+    const {data} = await authApi.get("/find/join?team_id=" + team_id + "&cover_letter=" + cover_letter)
+    return data
+}
+
+// export const getMembersList = async (team_id) => {
+//     const {data} = await authApi.get("/team/members_list/" + team_id)
+//     return data
+// }

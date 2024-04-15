@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react';
-import {Context} from "../index";
+import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
-import {login} from "../http/userAPI";
-import {HOME_ROUTE} from "../utils/consts";
+import {login} from "../../http/userAPI";
+import {HOME_ROUTE} from "../../utils/consts";
 import {useNavigate} from "react-router-dom";
 
 

@@ -7,13 +7,13 @@ import {
     TEAM_ROUTE,
     TEAMS_ROUTE
 } from "./utils/consts";
-import Teams from "./pages/Teams";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import TeamPage from "./pages/TeamPage";
-import CreateTeam from "./pages/CreateTeam";
-import Profile from "./pages/Profile"
+import Teams from "./pages/team_pages/Teams";
+import Home from "./pages/main_pages/Home";
+import Login from "./pages/auth_pages/Login";
+import Register from "./pages/auth_pages/Register";
+import TeamPage from "./pages/team_pages/TeamPage";
+import CreateTeam from "./pages/team_pages/CreateTeam";
+import Profile from "./pages/auth_pages/Profile"
 
 export const authRoutes = [
     {

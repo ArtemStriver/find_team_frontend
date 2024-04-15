@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Route, Routes} from "react-router-dom";
 import {authRoutes, publicRoutes} from "../routes";
-import Home from "../pages/Home";
+import Home from "../pages/main_pages/Home";
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 

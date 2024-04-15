@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {observer} from "mobx-react-lite";
-import {CREATE_TEAM_ROUTE, LOGIN_ROUTE} from "../utils/consts";
+import {CREATE_TEAM_ROUTE, LOGIN_ROUTE} from "../../utils/consts";
 import {useNavigate} from "react-router-dom";
-import {Context} from "../index";
+import {Context} from "../../index";
 
 const Home = observer(() => {
     const navigate = useNavigate()

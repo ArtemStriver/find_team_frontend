@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {observer} from "mobx-react-lite";
-import {register} from "../http/userAPI";
+import {register} from "../../http/userAPI";
 import {useNavigate} from "react-router-dom";
-import {HOME_ROUTE} from "../utils/consts";
+import {HOME_ROUTE} from "../../utils/consts";
 
 
 const RegisterForm = observer(() => {

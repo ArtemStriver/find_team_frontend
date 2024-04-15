@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import {HOME_ROUTE} from "../utils/consts";
-import {createTeam} from "../http/teamAPI";
+import {HOME_ROUTE} from "../../utils/consts";
+import {createTeam} from "../../http/teamAPI";
 
 const CreateTeam = () => {
     const [title, setTitle] = useState("");

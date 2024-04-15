@@ -10,6 +10,8 @@ export default class TeamStore {
         this._teams = []
         this._my_teams = []
         this._my_teams_participation = []
+        // this._applications_list = []
+        // this._members_list = []
         makeAutoObservable(this)
     }
     setTypes(types) {
@@ -28,6 +30,14 @@ export default class TeamStore {
         this._my_teams_participation = my_teams_participation
     }
 
+    // setApplicationList(applications) {
+    //     this._applications_list = applications
+    // }
+    //
+    // setMembersList(members) {
+    //     this._members_list = members
+    // }
+
     get types() {
         return this._types
     }
@@ -43,5 +53,13 @@ export default class TeamStore {
     get myTeamsParticipation() {
         return this._my_teams_participation
     }
+
+    // get applications_list() {
+    //     return this._applications_list
+    // }
+    //
+    // get members_list() {
+    //     return this._members_list
+    // }
 
 }

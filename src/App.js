@@ -25,7 +25,7 @@ const App = observer(() => {
     useEffect(() => {
         getTeams().then(data => team.setTeams(data))
     }, [])
-
+    // TODO сделать так, чтобы команды подгружались в профиле.
     useEffect(() => {
         getMyTeams().then(data => team.setMyTeams(data))
     }, [])
@@ -38,6 +38,7 @@ const App = observer(() => {
     return (
         <div className="wrapper">
             <Router>
+                {/*TODO возможно надо будет сделать хедер на каждой странице*/}
                 <Header/>
                 <AppRouter/>
                 <Footer/>

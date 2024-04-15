@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {useNavigate} from "react-router-dom";
-import {LOGIN_ROUTE, TEAM_ROUTE} from "../utils/consts";
-import {Context} from "../index";
+import {LOGIN_ROUTE, TEAM_ROUTE} from "../../utils/consts";
+import {Context} from "../../index";
 
 const TeamItem = ({team}) => {
     const {user} = useContext(Context)
