@@ -14,11 +14,14 @@ const App = observer(() => {
     const {team} = useContext(Context)
 
     useEffect(() => {
-        if (localStorage.getItem('token')) {
+        if (localStorage.getItem('rstoken')) {
             check().then(data => {
                 user.setIsAuth(true);
                 user.setUser(data);
             })
+        } else {
+            user.setIsAuth(false);
+            user.setUser();
         }
     }, [])
 

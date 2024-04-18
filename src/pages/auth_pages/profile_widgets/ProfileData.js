@@ -2,6 +2,8 @@ import React from 'react';
 
 const ProfileData = (data) => {
     const user_data = data.data;
+    const user_contacts = user_data.contacts;
+    console.log(user_data);
 
     return (
         <div>
@@ -10,8 +12,11 @@ const ProfileData = (data) => {
                 {user_data.username}
             </div>
             <div className="contacts">
-                {/*TODO надо как-то отобразить список контактов*/}
-                {/*{user_data.contacts.map(contact => <div>{contact}</div>)}*/}
+                {user_contacts?.email}
+                {user_contacts?.telegram}
+                {user_contacts?.vk}
+                {user_contacts?.discord}
+                {user_contacts?.other}
             </div>
             <div className="description">
                 <p>

@@ -16,6 +16,7 @@ const LoginForm = observer(() => {
         try {
             const response = await login(email, password)
             localStorage.setItem('token', response.data.access_token)
+            localStorage.setItem('rstoken', response.data.refresh_token)
             user.setUser(response.data.user)
             user.setIsAuth(true)
             navigate(HOME_ROUTE)
