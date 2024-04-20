@@ -3,7 +3,6 @@ import React from 'react';
 const ProfileData = (data) => {
     const user_data = data.data;
     const user_contacts = user_data.contacts;
-    console.log(user_data);
 
     return (
         <div>
