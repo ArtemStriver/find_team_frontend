@@ -1,4 +1,5 @@
 import {api, authApi} from "./index";
+import axios from "axios";
 
 
 export const createTeam = async (
@@ -39,13 +40,21 @@ export const getTeamsMyParticipation  = async () => {
 }
 
 export const getApplicationList = async (team_id) => {
-    const {data} = await authApi.get("/team/applications_list?team_id=" + team_id)
-    return data
+    try {
+        const {data} = await authApi.get("/team/applications_list?team_id=" + team_id)
+        return data
+    } catch (e) {
+        return []
+    }
 }
 
 export const getMembersList = async (team_id) => {
-    const {data} = await authApi.get("/team/members_list?team_id=" + team_id)
-    return data
+    try {
+        const {data} = await authApi.get("/team/members_list?team_id=" + team_id)
+        return data
+    } catch (e) {
+        return []
+    }
 }
 
 export const joinInTeam = async (team_id, cover_letter) => {

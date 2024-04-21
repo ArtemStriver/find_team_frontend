@@ -7,6 +7,7 @@ import TeamOwnerData from "./team_widgets/TeamOwnerData";
 import TeamMembers from "./team_widgets/TeamMembers";
 import TeamActions from "./team_widgets/TeamActions";
 import TeamApplications from "./team_widgets/TeamApplications";
+import TeamNumberOfMembers from "./team_widgets/TeamNumberOfMembers";
 
 const TeamPage = () => {
     const {user} = useContext(Context)
@@ -20,15 +21,11 @@ const TeamPage = () => {
     }, []);
 
     useEffect(() => {
-        if (user._user.id === team_full_data.owner) {
-            getApplicationList(id).then(data => setApplicationList(data))
-        }
+        getApplicationList(id).then(data => setApplicationList(data))
     }, [])
 
     useEffect(() => {
-        if (user._user.id === team_full_data.owner) {
-            getMembersList(id).then(data => setMembersList(data))
-        }
+        getMembersList(id).then(data => setMembersList(data))
     }, [])
 
     return (
@@ -36,11 +33,12 @@ const TeamPage = () => {
             <TeamOwnerData data={team_full_data}/>
             <TeamData data={team_full_data}/>
             <div>
+                <TeamNumberOfMembers data={team_full_data}/>
                 {/*TODO сделать условие отображения списка участников и заявок в зависимости от статуса пользователя*/}
-                <TeamMembers data={members_list}/>
+                <TeamMembers u_data={user} t_data={team_full_data} m_data={members_list}/>
                 <TeamApplications data={application_list}/>
                 {/*TODO сделать условие отображения разных кнопок в зависимости от статуса пользователя здесь а не в TeamAction*/}
-                <TeamActions user_data={user} team_data={team_full_data}/>
+                <TeamActions u_data={user} t_data={team_full_data}/>
             </div>
         </div>
 
