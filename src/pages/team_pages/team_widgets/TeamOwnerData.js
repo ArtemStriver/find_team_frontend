@@ -1,4 +1,5 @@
 import React from 'react';
+import {PROFILE_ROUTE} from "../../../utils/consts";
 
 const TeamOwnerData = (data) => {
     const team_data = data.data;
@@ -6,9 +7,7 @@ const TeamOwnerData = (data) => {
     return (
         <div className="team_owner_data">
             <div className="team_image"></div>
-            {/*/!*TODO вместо owner_id выводить имя или почту владельца команды*!/*/}
-            <div className="owner_name">{team_data.owner_name}</div>
-            <div className="owner_contacts">{team_data.owner}</div>
+            <a className="owner_name" href={PROFILE_ROUTE + "/" + team_data.owner}>{team_data.owner_name}</a>
         </div>
     );
 };

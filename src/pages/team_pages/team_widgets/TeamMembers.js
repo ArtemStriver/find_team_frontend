@@ -1,4 +1,5 @@
 import React from 'react';
+import {PROFILE_ROUTE} from "../../../utils/consts";
 
 const TeamMembers = (data) => {
     const members_data = data.m_data;
@@ -7,9 +8,10 @@ const TeamMembers = (data) => {
 
     return (
         <div className="team_members">
+            {/*TODO Сделать имена членов команды ссылками*/}
             {members_data?.map(
                 member => <div key={member.user_id}>
-                    <p>{member.username} {member.user_id}</p>
+                    <a href={PROFILE_ROUTE + "/" + member.user_id}>{member.username}</a>
                     {user_data.id === team_data.owner ?
                         <button>Исключить</button>
                         :
