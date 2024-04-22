@@ -6,7 +6,7 @@ import {observer} from "mobx-react-lite";
 import AppRouter from "./components/AppRouter";
 import {Context} from "./index";
 import {check} from "./http/userAPI";
-import {getMyTeams, getTeams, getTeamsMyParticipation} from "./http/teamAPI";
+import {getTeams} from "./http/teamAPI";
 
 
 const App = observer(() => {

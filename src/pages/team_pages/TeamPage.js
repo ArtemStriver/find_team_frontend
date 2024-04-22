@@ -16,6 +16,12 @@ const TeamPage = () => {
     const [members_list, setMembersList] = useState([])
     const {id} = useParams()
 
+    const members = [];
+    for(const k in members_list) {
+        const v = members_list[k];
+        members.push(v.user_id);
+    }
+
     useEffect(() => {
         getOneTeams(id).then(data => setTeamFullData(data.data))
     }, []);
@@ -34,10 +40,19 @@ const TeamPage = () => {
             <TeamData data={team_full_data}/>
             <div>
                 <TeamNumberOfMembers data={team_full_data}/>
-                {/*TODO сделать условие отображения списка участников и заявок в зависимости от статуса пользователя*/}
-                <TeamMembers u_data={user} t_data={team_full_data} m_data={members_list}/>
-                <TeamApplications data={application_list}/>
-                {/*TODO сделать условие отображения разных кнопок в зависимости от статуса пользователя здесь а не в TeamAction*/}
+                {user?.user.id === team_full_data?.owner ?
+                    <div>
+                        <TeamMembers u_data={user} t_data={team_full_data} m_data={members_list}/>
+                        <TeamApplications data={application_list}/>
+                    </div>
+                    :
+                    members?.includes(user?.user.id) ?
+                        <div>
+                            <TeamMembers u_data={user} t_data={team_full_data} m_data={members_list}/>
+                        </div>
+                        :
+                        <div></div>
+                }
                 <TeamActions u_data={user} t_data={team_full_data}/>
             </div>
         </div>

@@ -1,5 +1,4 @@
 import {api, authApi} from "./index";
-import axios from "axios";
 
 
 export const createTeam = async (
@@ -55,9 +54,4 @@ export const getMembersList = async (team_id) => {
     } catch (e) {
         return []
     }
-}
-
-export const joinInTeam = async (team_id, cover_letter) => {
-    const {data} = await authApi.get("/find/join?team_id=" + team_id + "&cover_letter=" + cover_letter)
-    return data
 }

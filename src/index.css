@@ -283,13 +283,13 @@ header .presentation {
     border: none;
 }
 
-.team_page .team_members {
-    display: block;
-    text-align: center;
-    width: 200px;
-    margin: 20px;
-    color: red;
-}
+/*.team_page .team_members {*/
+/*    display: block;*/
+/*    text-align: center;*/
+/*    width: 200px;*/
+/*    margin: 20px;*/
+/*    color: red;*/
+/*}*/
 
 /*.team_image {*/
 /*    margin: 5px 0;*/
