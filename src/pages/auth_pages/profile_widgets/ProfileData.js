@@ -1,13 +1,26 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {PROFILE_ROUTE} from "../../../utils/consts";
+import {useNavigate} from "react-router-dom";
+import {Context} from "../../../index";
 
 const ProfileData = (data) => {
+    const {user} = useContext(Context)
     const user_data = data.data;
     const user_contacts = user_data.contacts;
+    const navigate = useNavigate()
 
     return (
         <div>
             <div className="name">
-                <button>Отредактировать</button>
+                {user_data.user_id === user.user.id ?
+                    <button
+                        className="change_team-button"
+                        onClick={() => navigate(PROFILE_ROUTE + "/change")}>
+                        Отредактировать
+                    </button>
+                    :
+                    <div></div>
+                }
                 {user_data.username}
             </div>
             <div className="contacts">

@@ -2,20 +2,11 @@ import {makeAutoObservable} from "mobx";
 
 export default class TeamStore {
     constructor() {
-        this._types = [
-            {id: 1, name: "Работа"},
-            {id: 2, name: "Лайфстайл"},
-            {id: 3, name: "Спорт"},
-        ]
         this._teams = []
         this._my_teams = []
         this._my_teams_participation = []
-        // this._applications_list = []
-        // this._members_list = []
+        this._team_now = {}
         makeAutoObservable(this)
-    }
-    setTypes(types) {
-        this._types = types
     }
 
     setTeams(teams) {
@@ -30,16 +21,8 @@ export default class TeamStore {
         this._my_teams_participation = my_teams_participation
     }
 
-    // setApplicationList(applications) {
-    //     this._applications_list = applications
-    // }
-    //
-    // setMembersList(members) {
-    //     this._members_list = members
-    // }
-
-    get types() {
-        return this._types
+    setTeamNow(team_now) {
+        this._team_now = team_now
     }
 
     get teams() {
@@ -54,12 +37,7 @@ export default class TeamStore {
         return this._my_teams_participation
     }
 
-    // get applications_list() {
-    //     return this._applications_list
-    // }
-    //
-    // get members_list() {
-    //     return this._members_list
-    // }
-
+    get team_now() {
+        return this._team_now
+    }
 }

@@ -1,25 +1,27 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import {HOME_ROUTE} from "../../utils/consts";
-import {createTeam} from "../../http/teamAPI";
+import {HOME_ROUTE, TEAM_ROUTE} from "../../utils/consts";
+import {Context} from "../../index";
+import {changeTeam, deleteTeam} from "../../http/teamAPI";
 
-const CreateTeam = () => {
-    const [title, setTitle] = useState("");
-    const [type_team, setTypeTeam] = useState("lifestyle");
-    const [number_of_members, setNumberOfMembers] = useState(1);
-    const [description, setDescription] = useState("");
-    const [deadline_at, setDeadline] = useState("");
-    const [team_city, setTeamCity] = useState("Интернет");
-    const [tag1, setTag1] = useState("");
-    const [tag2, setTag2] = useState("");
-    const [tag3, setTag3] = useState("");
-
+const ChangeTeam = () => {
+    const {team} = useContext(Context)
     const navigate = useNavigate()
 
-    const addTeam = async () => {
+    const [title, setTitle] = useState(team?.team_now.title);
+    const [type_team, setTypeTeam] = useState(team?.team_now.type_team);
+    const [number_of_members, setNumberOfMembers] = useState(team?.team_now.number_of_members);
+    const [description, setDescription] = useState(team?.team_now.team_description);
+    const [deadline_at, setDeadline] = useState(team?.team_now.team_deadline_at);
+    const [team_city, setTeamCity] = useState(team?.team_now.team_city);
+    const [tag1, setTag1] = useState(team?.team_now.tags.tag1);
+    const [tag2, setTag2] = useState(team?.team_now.tags.tag2);
+    const [tag3, setTag3] = useState(team?.team_now.tags.tag3);
+
+    const changeThisTeam = async () => {
         try {
-            // const response = await create_team
-            await createTeam(
+            await changeTeam(
+                team.team_now.id,
                 title,
                 type_team,
                 number_of_members,
@@ -27,21 +29,28 @@ const CreateTeam = () => {
                 deadline_at,
                 team_city,
                 tag1, tag2, tag3);
+            navigate(TEAM_ROUTE + "/" + team.team_now.id)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+    const deleteThisTeam = async (id) => {
+        try {
+            await deleteTeam(id);
             navigate(HOME_ROUTE)
         } catch (e) {
             console.log(e)
         }
     }
-
     return (
         <div className="form-page">
-            <h1>Create Your Team</h1>
+            <h1>Change Your Team</h1>
             <form className="some-form">
                 <input
                     className="some-input"
                     id="title"
-                    onChange={e => setTitle(e.target.value)}
                     value={title}
+                    onChange={e => setTitle(e.target.value)}
                     type="text"
                     placeholder="Title"/>
                 <select
@@ -50,8 +59,8 @@ const CreateTeam = () => {
                     id="typeTeam"
                     onChange={e => setTypeTeam(e.target.value)}
                     value={type_team}>
-                    <option value="lifestyle">Лайфстайл</option>
                     <option value="work">Работа</option>
+                    <option value="lifestyle">Лайфстайл</option>
                     <option value="sport">Спорт</option>
                 </select>
                 <input
@@ -104,11 +113,16 @@ const CreateTeam = () => {
                     type="text"
                     placeholder="Tag3"/>
                 <br/><br/>
-                <button className="login-button" type="button" onClick={addTeam}>Создать команду</button>
+                <button className="login-button" type="button" onClick={changeThisTeam}>Изменить команду</button>
                 <br/><br/>
             </form>
+            <button
+                className="delete_team-button"
+                onClick={() => deleteThisTeam(team.team_now.id)}>
+                Удалить команду
+            </button>
         </div>
     );
 };
 
-export default CreateTeam;
+export default ChangeTeam;

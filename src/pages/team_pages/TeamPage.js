@@ -11,6 +11,7 @@ import TeamNumberOfMembers from "./team_widgets/TeamNumberOfMembers";
 
 const TeamPage = () => {
     const {user} = useContext(Context)
+    const {team} = useContext(Context)
     const [team_full_data, setTeamFullData] = useState([])
     const [application_list, setApplicationList] = useState([])
     const [members_list, setMembersList] = useState([])
@@ -33,6 +34,8 @@ const TeamPage = () => {
     useEffect(() => {
         getMembersList(id).then(data => setMembersList(data))
     }, [])
+
+    team.setTeamNow(team_full_data)
 
     return (
         <div className="team_page">

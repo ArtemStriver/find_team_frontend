@@ -1,12 +1,15 @@
 import React from 'react';
 import {joinInTeam, quitFromTeam} from "../../../http/teamActionAPI";
 import Modal from "./team_modal/Modal";
+import {TEAM_ROUTE} from "../../../utils/consts";
+import {useNavigate} from "react-router-dom";
 
 const TeamActions = (data) => {
     const user_data = data.u_data.user;
     const team_data = data.t_data;
     const [active, setActiveModal] = React.useState(false);
     const [coverLetter, setCoverLetter] = React.useState();
+    const navigate = useNavigate()
 
     const members = [];
     for(const k in team_data.members) {
@@ -36,8 +39,11 @@ const TeamActions = (data) => {
         <div>
             {user_data?.id === team_data?.owner ?
                 <div>
-                    <button className="change_team-button">Редактировать команду</button>
-                    <button className="delete_team-button">Удалить команду</button>
+                    <button
+                        className="change_team-button"
+                        onClick={() => navigate(TEAM_ROUTE + "/change/" + team_data.id)}>
+                        Редактировать команду
+                    </button>
                 </div>
                 :
                 members?.includes(user_data?.id) ?

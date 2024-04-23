@@ -30,6 +30,7 @@ const Profile = () => {
     useEffect(() => {
         getProfileData(userProfileId).then(data => setProfileData(data))
     }, [user])
+    user.setProfile(profile_data)
 
     return (
         <div className="profile-page">

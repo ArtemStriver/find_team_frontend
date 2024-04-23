@@ -14,6 +14,8 @@ import Register from "./pages/auth_pages/Register";
 import TeamPage from "./pages/team_pages/TeamPage";
 import CreateTeam from "./pages/team_pages/CreateTeam";
 import Profile from "./pages/auth_pages/Profile"
+import ChangeTeam from "./pages/team_pages/ChangeTeam";
+import ChangeProfile from "./pages/auth_pages/ChangeProfile";
 
 export const authRoutes = [
     {
@@ -27,6 +29,14 @@ export const authRoutes = [
     {
         path: PROFILE_ROUTE + "/:id",
         Component: Profile
+    },
+    {
+        path: TEAM_ROUTE + "/change/:id",
+        Component: ChangeTeam
+    },
+    {
+        path: PROFILE_ROUTE + "/change",
+        Component: ChangeProfile
     },
 ]
 
