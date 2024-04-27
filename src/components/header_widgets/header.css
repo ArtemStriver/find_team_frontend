@@ -1,0 +1,108 @@
+header a {
+    text-decoration: none;
+    color: #222;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+    gap: 80px;
+    /*    gap настроить*/
+}
+
+header .logo {
+    position: relative;
+    display: block;
+    width: 212px;
+    height: 32px;
+    margin-right: 40px;
+    margin-top: 50px;
+
+    @media (max-width: 768px) {
+        margin-right: 0;
+    }
+}
+
+header .logo_image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header .nav {
+    height: 100%;
+    margin-top: 50px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+header .nav-list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+    gap: 30px;
+/*    gap настроить*/
+}
+
+header .nav-item {
+    height: 100%;
+
+    &:not(:last-child) {
+        margin-right: 30px;
+
+        @media (max-width: 1024px) {
+            margin-right: 27px;
+        }
+    }
+}
+
+header .nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 24px;
+    opacity: 0.6;
+    transition: opacity 300ms ease;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+header .entry {
+    display: block;
+    width: 287px;
+    height: 75px;
+    top: 0;
+    right: 30px;
+    background:  linear-gradient(to right, #B2CAEF 0%, #FFE4C0 53%, #D5EBCB 100%);
+    border: 1px solid;
+    border-radius: 0 0 18px 18px;
+    transition: background 0.5s ease;
+
+    &:hover {
+        /*TODO не работает плавный переход*/
+        background:  linear-gradient(to right, #3E7BD8 0%, #FFBB61 53%, #95CC7D 100%);
+    }
+}
+
+header .entry-actions {
+    display: flex;
+    justify-content: center;
+    width: 267px;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 16px;
+    background-color: white;
+    border-radius: 0 0 18px 18px;
+}
+
+header .exit {
+
+}

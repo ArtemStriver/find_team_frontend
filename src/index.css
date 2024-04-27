@@ -14,92 +14,77 @@ body {
 
 .wrapper {
     width: 1280px;
-    margin: 50px auto;
+    margin: 0 auto;
 }
 
-header a {
-    text-decoration: none;
-    color: #222;
-}
+/*header a {*/
+/*    text-decoration: none;*/
+/*    color: #222;*/
+/*}*/
 
-header .nav {
-    display: flex;
-    justify-content: center;
-    gap: 180px;
-}
+/*header .nav {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    gap: 180px;*/
+/*}*/
 
-header .logo {
-    font-weight: 900;
-    font-size: 50px;
-    text-decoration: none;
-}
+/*header .logo {*/
+/*    font-weight: 900;*/
+/*    font-size: 50px;*/
+/*    text-decoration: none;*/
+/*}*/
 
-header ul.nav-list {
-    margin-top: 20px;
-    list-style: none;
-}
+/*header ul.nav-list {*/
+/*    margin-top: 20px;*/
+/*    list-style: none;*/
+/*}*/
 
-header ul.nav-list li {
-    display: inline;
-    margin: 55px;
-    font-size: 22px;
-    cursor: pointer;
-    transition: opacity 300ms ease;
-}
+/*header ul.nav-list li {*/
+/*    display: inline;*/
+/*    margin: 55px;*/
+/*    font-size: 22px;*/
+/*    cursor: pointer;*/
+/*    transition: opacity 300ms ease;*/
+/*}*/
 
-header ul.nav-list li:hover {
-    opacity: 0.5;
-}
+/*header ul.nav-list li:hover {*/
+/*    opacity: 0.5;*/
+/*}*/
 
-header .log-in-main-button, .log-out-main-button {
-    display: inline-block;
-    color: #e0e0e0;
-    margin-top: 5px;
-    background: #222;
-    width: 150px;
-    height: 55px;
-    font-size: 21px;
-    line-height: 35px;
-    border: none;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: opacity 300ms ease;
-}
+/*header .log-in-main-button, .log-out-main-button {*/
+/*    display: inline-block;*/
+/*    color: #e0e0e0;*/
+/*    margin-top: 5px;*/
+/*    background: #222;*/
+/*    width: 150px;*/
+/*    height: 55px;*/
+/*    font-size: 21px;*/
+/*    line-height: 35px;*/
+/*    border: none;*/
+/*    border-radius: 12px;*/
+/*    text-decoration: none;*/
+/*    transition: opacity 300ms ease;*/
+/*}*/
 
-header .log-in-main-button:hover, .log-out-main-button:hover {
-    opacity: 0.8;
-}
+/*header .log-in-main-button:hover, .log-out-main-button:hover {*/
+/*    opacity: 0.8;*/
+/*}*/
 
-header .log-out-main-button {
-    background: #fff;
-    color: #000;
-    border: 2px solid #000;
-}
+/*header .log-out-main-button {*/
+/*    background: #fff;*/
+/*    color: #000;*/
+/*    border: 2px solid #000;*/
+/*}*/
 
-header .presentation {
-    /*!*background: url("");*! TODO здесь организовать картинку логотипа*/
-}
+/*header .presentation {*/
+/*    !*!*background: url("");*! TODO здесь организовать картинку логотипа*!*/
+/*}*/
 
 .home-page {
     width: 1280px;
     margin: 50px auto;
     display: inline-block;
     text-align: center;
-}
-
-.create-team-button {
-    display: inline-block;
-    color: #e0e0e0;
-    margin-top: 50px;
-    background: #222;
-    width: 150px;
-    height: 55px;
-    font-size: 21px;
-    line-height: 35px;
-    border: none;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: opacity 300ms ease;
 }
 
 .form-page {
