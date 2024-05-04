@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+
 header a {
     text-decoration: none;
     color: #222;
@@ -78,18 +80,30 @@ header .nav-link {
 header .entry {
     display: block;
     width: 287px;
-    height: 75px;
+    height: 90px;
     top: 0;
     right: 30px;
     background:  linear-gradient(to right, #B2CAEF 0%, #FFE4C0 53%, #D5EBCB 100%);
-    border: 1px solid;
     border-radius: 0 0 18px 18px;
-    transition: background 0.5s ease;
+    box-shadow: 3px 5px 5px 0 rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.05));
+    transition: 0.5s ease;
+}
 
-    &:hover {
-        /*TODO не работает плавный переход*/
-        background:  linear-gradient(to right, #3E7BD8 0%, #FFBB61 53%, #95CC7D 100%);
-    }
+header .entry:hover {
+    /*    !*TODO не работает плавный переход*!*/
+    background:  linear-gradient(to right, #3E7BD8 0%, #FFBB61 53%, #95CC7D 100%);
+}
+
+header .entry:hover .entry-actions {
+    width: 280px;
+}
+
+header .entry:hover .entry-create_team-link {
+    font-weight: 600;
+    font-size: 17px;
+    color: #000000;
+    padding: 7px;
 }
 
 header .entry-actions {
@@ -101,8 +115,33 @@ header .entry-actions {
     padding-bottom: 16px;
     background-color: white;
     border-radius: 0 0 18px 18px;
+    transition: 0.3s ease;
 }
 
-header .exit {
+header .entry-create_team-link {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    font-size: 16px;
+    transition: 0.1s ease;
+}
 
+header .entry-actions-name {
+    font-size: 24px;
+    padding-right: 8px;
+}
+
+header .entry-actions-exit {
+    display: inline-block;
+    padding-left: 8px;
+    width: 18px;
+    height: 18px;
+    background-image: url("../../img/exit.png");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: center;
+
+    &:hover {
+        background-image: url("../../img/exit_active.png");
+    }
 }

@@ -35,23 +35,15 @@ const Entry = (data) => {
                     <div>
                         <a
                             href={PROFILE_ROUTE + "/" + user_data?.user?.id}
-                            className="">@{user_data?.user?.username}
+                            className="entry-actions-name">@{user_data?.user?.username}
                         </a>
-                        <a className="exit" href="#" onClick={() => logOut()}>
-                            <img
-                                src={img}
-                                alt="Findy"
-                                className="exit_image"
-                                height={18}
-                                width={18}
-                            />
-                        </a>
+                        <a className="entry-actions-exit" href="#" onClick={() => logOut()}> </a>
                     </div>
                 }
             </div>
             <div className="entry-create_team">
-                <a className="" href={CREATE_TEAM_ROUTE}>
-                Create Team
+                <a className="entry-create_team-link" href={CREATE_TEAM_ROUTE}>
+                Создать файнд
                 </a>
             </div>
 

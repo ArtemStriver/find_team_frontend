@@ -32,6 +32,7 @@ const RegisterForm = observer(() => {
                         onChange={e => setUsername(e.target.value)}
                         value={username}
                         type="text"
+                        maxLength="14"
                         placeholder="Username"/>
                     <input
                         className="some-input"

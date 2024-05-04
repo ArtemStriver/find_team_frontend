@@ -56,6 +56,7 @@ const ChangeProfile = () => {
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                     type="text"
+                    maxLength="14"
                     placeholder="Username"/>
                 <input
                     className="some-input"
