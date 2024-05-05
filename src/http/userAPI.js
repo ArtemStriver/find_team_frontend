@@ -1,6 +1,5 @@
 import {api, authApi} from "./index";
 import axios from "axios";
-import {HOME_ROUTE} from "../utils/consts";
 
 export const register = async (username, email, hashed_password, confirmed_password) => {
     return await api.post("/auth/register", {username, email, hashed_password, confirmed_password})

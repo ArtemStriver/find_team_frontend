@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #fff;
+    background: #F2F2F2;
     color: #222;
     font-family: "Golos Text", sans-serif;
     font-weight: 500;
@@ -116,20 +116,6 @@ body {
     border: 1px solid #bdbdbd;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.login-button {
-    display: inline-block;
-    color: #e0e0e0;
-    margin: 20px auto;
-    background: #222;
-    width: 230px;
-    height: 35px;
-    font-size: 20px;
-    line-height: 35px;
-    border: none;
-    border-radius: 12px;
-    text-decoration: none;
 }
 
 .form-page a {

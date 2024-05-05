@@ -28,9 +28,6 @@ const App = observer(() => {
     useEffect(() => {
         getTeams().then(data => team.setTeams(data))
     }, [])
-    // TODO сделать так, чтобы команды подгружались в профиле.
-
-
 
     return (
         <div className="wrapper">

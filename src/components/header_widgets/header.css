@@ -8,34 +8,37 @@ header a {
 header {
     display: flex;
     justify-content: center;
-    margin-bottom: 80px;
-    gap: 80px;
+    /*margin-bottom: 80px;*/
+    height: 130px;
+    /*gap: 80px;*/
     /*    gap настроить*/
 }
 
 header .logo {
+    background-image: url("../../img/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
     display: block;
-    width: 212px;
-    height: 32px;
-    margin-right: 40px;
-    margin-top: 50px;
+    top: 0;
+    width: 242px;
+    height: 83px;
+    border-radius: 0 0 18px 18px;
+    transition: 0.5s ease;
 
     @media (max-width: 768px) {
         margin-right: 0;
     }
-}
-
-header .logo_image {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    &:hover {
+        background-image: url("../../img/logo_blank.svg");
+    }
 }
 
 header .nav {
     height: 100%;
-    margin-top: 50px;
+    top: 0;
+    margin-left: 45px;
+    margin-right: 200px;
 
     @media (max-width: 768px) {
         display: none;
@@ -44,36 +47,66 @@ header .nav {
 
 header .nav-list {
     display: flex;
-    align-items: center;
-    height: 100%;
+    /*align-items: center;*/
     list-style: none;
-    gap: 30px;
+    gap: 40px;
 /*    gap настроить*/
 }
 
-header .nav-item {
-    height: 100%;
+header .nav-item_r {
+    background-color: #B2CAEF;
+    width: 140px;
+    height: 90px;
+    border-radius: 0 0 18px 18px;
+    transition: 0.4s ease;
 
-    &:not(:last-child) {
-        margin-right: 30px;
+    &:hover {
+        background-color: #3E7BD8;
+        height: 100px;
+    }
+}
 
-        @media (max-width: 1024px) {
-            margin-right: 27px;
-        }
+header .nav-item_l {
+    background-color: #FFE4C0;
+    width: 160px;
+    height: 90px;
+    border-radius: 0 0 18px 18px;
+    transition: 0.4s ease;
+
+    &:hover {
+        background-color: #FFBB61;
+        height: 100px;
+    }
+}
+
+header .nav-item_s {
+    background-color: #D5EBCB;
+    width: 100px;
+    height: 90px;
+    border-radius: 0 0 18px 18px;
+    transition: 0.4s ease;
+
+    &:hover {
+        background-color: #95CC7D;
+        height: 100px;
     }
 }
 
 header .nav-link {
-    position: relative;
+    /*position: relative;*/
     display: flex;
     align-items: center;
-    height: 100%;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 22px;
+    background-color: #FFFFFF;
+    border-radius: 0 0 18px 18px;
+    color: #5A5A5A;
     font-size: 24px;
-    opacity: 0.6;
-    transition: opacity 300ms ease;
+    transition: 300ms ease;
 
     &:hover {
-        opacity: 1;
+        color: black;
     }
 }
 
@@ -124,6 +157,7 @@ header .entry-create_team-link {
     padding: 8px;
     font-size: 16px;
     transition: 0.1s ease;
+    color: #5A5A5A;
 }
 
 header .entry-actions-name {
@@ -143,5 +177,19 @@ header .entry-actions-exit {
 
     &:hover {
         background-image: url("../../img/exit_active.png");
+    }
+}
+
+header .login-link {
+    color: #5A5A5A;
+    font-size: 24px;
+    transition: 0.3s ease;
+
+    &:hover {
+        padding: 3px 10px 5px 10px;
+        border: 2px solid #D5EBCB;
+        border-radius: 10px;
+        color: #307811;
+        font-weight: 600;
     }
 }

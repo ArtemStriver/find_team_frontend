@@ -4,7 +4,7 @@ import "./header.css"
 const Burger = () => {
     return (
         <div>
-            
+            {/*TODO сделать адаптивную верстку!!!*/}
         </div>
     );
 };
