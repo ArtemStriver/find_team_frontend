@@ -8,6 +8,7 @@ import TeamMembers from "./team_widgets/TeamMembers";
 import TeamActions from "./team_widgets/TeamActions";
 import TeamApplications from "./team_widgets/TeamApplications";
 import TeamNumberOfMembers from "./team_widgets/TeamNumberOfMembers";
+import "./team.css"
 
 const TeamPage = () => {
     const {user} = useContext(Context)

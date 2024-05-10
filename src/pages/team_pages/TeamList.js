@@ -1,14 +1,14 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {observer} from "mobx-react-lite";
-import {Context} from "../../index";
 import TeamItem from "./TeamItem";
+import "./team.css"
 
-const TeamList = observer(() => {
-    const {team} = useContext(Context)
+const TeamList = observer((data) => {
+    const team_data = data.data;
 
     return (
         <div className="team_list">
-            {team.teams.map(team =>
+            {team_data.map(team =>
                 <TeamItem key={team.id} team={team}/>
             )}
         </div>

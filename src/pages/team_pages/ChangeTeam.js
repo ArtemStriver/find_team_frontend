@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {HOME_ROUTE, TEAM_ROUTE} from "../../utils/consts";
 import {Context} from "../../index";
 import {changeTeam, deleteTeam} from "../../http/teamAPI";
+import "./team.css"
 
 const ChangeTeam = () => {
     const {team} = useContext(Context)

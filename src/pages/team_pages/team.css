@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+
+.teams_page {
+    width: 1280px;
+    margin: 30px auto;
+    display: block;
+    text-align: center;
+}
+
+.teams_info_bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    position: relative;
+    border-radius: 13px;
+    padding: 5px 15px;
+}
+
+.type_team_title {
+    display: block;
+    font-size: 65px;
+    font-family: "Golos Text", sans-serif;
+    font-weight: 650;
+}
+
+.type_team_title_w {
+    color: #3E7BD8;
+}
+
+.type_team_title_l {
+    color: #FFBB61;
+}
+
+.type_team_title_s {
+    color: #95CC7D;
+}
+
+.search_and_filters {
+    display: flex;
+}
+
+.search_teams {
+    float: right;
+    padding-top: 5px;
+    padding-right: 30px;
+}
+
+.search_teams .search_teams_input {
+    height: 35px;
+    width: 230px;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #5A5A5A;
+    transition: 200ms ease;
+    border-radius: 3px;
+    padding-top: 20px;
+    font-size: 24px;
+    font-family: "Golos Text", sans-serif;
+    font-weight: 500;
+
+    &:focus {
+        border-color: #000
+    }
+}
+
+.teams_filter {
+    padding-top: 15px;
+    padding-right: 10px;
+}
+
+.teams_filter .teams_filter_list {
+    display: block;
+    list-style: none;
+}
+
+.teams_filter .teams_filter_item {
+    padding-bottom: 8px;
+}
+
+.teams_filter .teams_filter_link{
+    text-decoration: none;
+    color: #5A5A5A;
+    transition: 300ms ease;
+    
+    &:hover {
+        color: #000;
+    }
+
+    &:checked {
+        color: #000;
+    }
+}
+
+/*_______________________________*/
+
+.team_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 35px;
+    margin: 50px auto;
+}
+
+.team_item_card {
+    display: block;
+    break-inside: avoid;
+    margin-bottom: 40px;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.team_item_card_w {
+    color: #3E7BD8;
+    width: 390px;
+    height: auto;
+    background-size: cover;
+    background-color: white;
+    border-radius: 25px;
+    border: 3px solid #B2CAEF;
+}
+
+.team_item_card_l {
+    color: #FFBB61;
+    width: 390px;
+    height: auto;
+    background-size: cover;
+    background-color: white;
+    border-radius: 25px;
+    border: 3px solid #FFE4C0;
+}
+
+.team_item_card_s {
+    color: #4F835D;
+    width: 390px;
+    height: auto;
+    background-size: cover;
+    background-color: white;
+    border-radius: 25px;
+    border: 3px solid #D5EBCB;
+}
+
+.team_item-title {
+    word-break: break-all;
+    text-align: left;
+    padding-top: 13px;
+    padding-left: 11px;
+    font-size: 35px;
+}
+
+.team_item-city {
+    word-break: break-all;
+    text-align: left;
+    padding-top: 2px;
+    padding-left: 11px;
+    font-size: 35px;
+}
+
+.team_item-type {
+    text-align: right;
+    padding-right: 15px;
+    padding-top: 13px;
+    padding-bottom: 11px;
+}
+
+.team_page {
+    width: 1280px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.team_page .team_owner_data {
+    /*display: flex;*/
+    position: relative;
+    margin: 20px;
+    width: 400px;
+    height: 500px;
+    font-size: 23px;
+    font-weight: 500;
+    background-size: cover;
+    background: url("../../img/work_img.png") no-repeat top center;
+    border-radius: 25px;
+    border: 1px solid #333;
+}
+.team_page .team_owner_data .owner_name{
+    position: absolute;
+    left: 40px;
+    bottom: 80px;
+}
+
+.team_page .team_owner_data .owner_contacts{
+    position: absolute;
+    left: 40px;
+    bottom: 10px;
+}
+
+.team_page .team_info {
+    display: block;
+    text-align: center;
+    width: 550px;
+    margin: 20px;
+}
+
+.team_page .team_info .team_title {
+    margin: 20px;
+    font-size: 45px;
+    font-weight: 900;
+}
+
+.team_page .team_info .team_type {
+    margin: 40px;
+    width: 220px;
+    font-size: 27px;
+    font-weight: 500;
+    border-radius: 25px;
+    border: 3px solid #555;
+}
+
+.team_page .team_info .team_description p {
+    margin: 10px;
+    text-align: left;
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.team_page .team_info .team_description {
+    margin: 20px;
+    text-align: left;
+}
+
+.team_page .team_info .team_deadline {
+    margin: 20px;
+    border-radius: 8px;
+    border: 3px solid #cc1616;
+}
+
+.team_page .team_info .want_to_team-button {
+    margin: 40px;
+    width: 200px;
+    height: 60px;
+    float: left;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 8px;
+    background: #ea8f1a;
+    border: none;
+}

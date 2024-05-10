@@ -1,6 +1,7 @@
 import React from 'react';
 import {PROFILE_ROUTE} from "../../../utils/consts";
 import {excludeComrade} from "../../../http/teamActionAPI";
+import "../team.css"
 
 const TeamMembers = (data) => {
     const members_data = data.m_data;

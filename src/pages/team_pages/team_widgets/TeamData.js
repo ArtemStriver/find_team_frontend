@@ -1,4 +1,5 @@
 import React from 'react';
+import "../team.css"
 
 const TeamData = (data) => {
     const team_data = data.data;

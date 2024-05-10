@@ -1,5 +1,6 @@
 import React from 'react';
 import {PROFILE_ROUTE} from "../../../utils/consts";
+import "../team.css"
 
 const TeamOwnerData = (data) => {
     const team_data = data.data;

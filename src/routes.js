@@ -56,5 +56,6 @@ export const publicRoutes = [
     {
         path: TEAMS_ROUTE,
         Component: Teams
+        // TODO добавить параметр, определяющий тип команды.
     },
 ]

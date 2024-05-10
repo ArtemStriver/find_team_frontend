@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {HOME_ROUTE} from "../../utils/consts";
 import {createTeam} from "../../http/teamAPI";
+import "./team.css"
 
 const CreateTeam = () => {
     const [title, setTitle] = useState("");
@@ -43,7 +44,8 @@ const CreateTeam = () => {
                     onChange={e => setTitle(e.target.value)}
                     value={title}
                     type="text"
-                    placeholder="Title"/>
+                    placeholder="Title"
+                    maxLength={50}/>
                 <select
                     // TODO кнопка меняет цвет при выборе типа команды
                     className="some-input"

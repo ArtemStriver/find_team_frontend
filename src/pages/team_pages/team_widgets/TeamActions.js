@@ -3,6 +3,7 @@ import {joinInTeam, quitFromTeam} from "../../../http/teamActionAPI";
 import Modal from "./team_modal/Modal";
 import {TEAM_ROUTE} from "../../../utils/consts";
 import {useNavigate} from "react-router-dom";
+import "../team.css"
 
 const TeamActions = (data) => {
     const user_data = data.u_data.user;

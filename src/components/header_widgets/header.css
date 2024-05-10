@@ -8,10 +8,7 @@ header a {
 header {
     display: flex;
     justify-content: center;
-    /*margin-bottom: 80px;*/
     height: 130px;
-    /*gap: 80px;*/
-    /*    gap настроить*/
 }
 
 header .logo {
@@ -47,10 +44,8 @@ header .nav {
 
 header .nav-list {
     display: flex;
-    /*align-items: center;*/
     list-style: none;
     gap: 40px;
-/*    gap настроить*/
 }
 
 header .nav-item_r {
@@ -93,7 +88,6 @@ header .nav-item_s {
 }
 
 header .nav-link {
-    /*position: relative;*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,7 +118,6 @@ header .entry {
 }
 
 header .entry:hover {
-    /*    !*TODO не работает плавный переход*!*/
     background:  linear-gradient(to right, #3E7BD8 0%, #FFBB61 53%, #95CC7D 100%);
 }
 

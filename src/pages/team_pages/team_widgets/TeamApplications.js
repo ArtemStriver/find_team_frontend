@@ -1,6 +1,7 @@
 import React from 'react';
 import {PROFILE_ROUTE} from "../../../utils/consts";
 import {rejectComrade, takeComrade} from "../../../http/teamActionAPI";
+import "../team.css"
 
 const TeamApplications = (data) => {
     const applications_data = data.data;
