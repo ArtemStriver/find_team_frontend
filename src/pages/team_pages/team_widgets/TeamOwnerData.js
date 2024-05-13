@@ -7,8 +7,11 @@ const TeamOwnerData = (data) => {
 
     return (
         <div className="team_owner_data">
-            <div className="team_image"></div>
-            <a className="owner_name" href={PROFILE_ROUTE + "/" + team_data.owner}>{team_data.owner_name}</a>
+            <div className="team_image"> </div>
+            <div className="owner_name" >
+                <p className="owner_name-annotation">Создано:</p>
+                <a className="owner_name-link" href={PROFILE_ROUTE + "/" + team_data.owner}>@{team_data.owner_name}</a>
+            </div>
         </div>
     );
 };

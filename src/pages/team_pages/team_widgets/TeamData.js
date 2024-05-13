@@ -7,8 +7,18 @@ const TeamData = (data) => {
 
     return (
         <div className="team_info">
-            <div className="team_title">{team_data.title}</div>
-            <div className="team_type">{team_data.type_team}</div>
+            <div className="team_title_and_type">
+                <div className={
+                    team_data?.type_team === 'work' ?
+                        "team_type_w"
+                        :
+                        team_data?.type_team === 'lifestyle' ?
+                            "team_type_l"
+                            :
+                            "team_type_s"
+                }>{team_data.type_team?.toLocaleUpperCase()}</div>
+                <div className="team_title">{team_data.title}</div>
+            </div>
             <div className="team_description">
                 <p>Описание:</p>
                 {team_data.team_description}

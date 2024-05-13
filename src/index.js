@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import UserStore from "./store/UserStore";
 import TeamStore from "./store/TeamStore";
+import './fonts/Floripa.ttf';
+import './fonts/Floripa.otf';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -5,6 +5,7 @@
     margin: 30px auto;
     display: block;
     text-align: center;
+    font-family: "Golos Text", sans-serif;
 }
 
 .teams_info_bar {
@@ -162,6 +163,8 @@
     padding-bottom: 11px;
 }
 
+/*_______________________________*/
+
 .team_page {
     width: 1280px;
     display: flex;
@@ -169,50 +172,109 @@
 }
 
 .team_page .team_owner_data {
-    /*display: flex;*/
     position: relative;
     margin: 20px;
     width: 400px;
-    height: 500px;
+    height: 400px;
     font-size: 23px;
     font-weight: 500;
-    background-size: cover;
-    background: url("../../img/work_img.png") no-repeat top center;
-    border-radius: 25px;
-    border: 1px solid #333;
-}
-.team_page .team_owner_data .owner_name{
-    position: absolute;
-    left: 40px;
-    bottom: 80px;
+    border-radius: 10px;
+    /*border: 1px solid #333;*/
+    background: linear-gradient(to right, #3E7BD8 30%, white 30%);
 }
 
-.team_page .team_owner_data .owner_contacts{
+.team_page .team_owner_data .team_image {
+    display: block;
+    width: 400px;
+    height: 345px;
+    background-image: url("../../img/work_img.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.team_page .team_owner_data .owner_name{
+    display: flex;
     position: absolute;
-    left: 40px;
-    bottom: 10px;
+    left: 0;
+    bottom: 0;
+}
+
+.team_page .owner_name .owner_name-annotation {
+    color: white;
+    padding: 10px 10px 15px;
+}
+
+.team_page .owner_name .owner_name-link {
+    padding: 10px 10px 15px;
+    text-decoration: none;
+    color: #5A5A5A;
+    transition: 0.3s ease;
+
+    &:hover {
+        color: #000;
+    }
 }
 
 .team_page .team_info {
     display: block;
-    text-align: center;
     width: 550px;
     margin: 20px;
 }
 
-.team_page .team_info .team_title {
-    margin: 20px;
-    font-size: 45px;
-    font-weight: 900;
+.team_info .team_title_and_type {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    text-align: left;
+    background-color: white;
+    border-radius: 10px;
 }
 
-.team_page .team_info .team_type {
-    margin: 40px;
-    width: 220px;
-    font-size: 27px;
+.team_title_and_type .team_title {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 10px;
+    font-size: 45px;
+    font-weight: 600;
+    text-align: center;
+    word-break: break-all;
+}
+
+.team_title_and_type .team_type_w {
+    position: relative;
+    top: -12px;
+    left: 12px;
+    text-align: left;
+    font-family: "Floripa", serif;
+    font-size: 24px;
     font-weight: 500;
-    border-radius: 25px;
-    border: 3px solid #555;
+    padding-right: 25px;
+    color: #3E7BD8;
+}
+
+.team_title_and_type .team_type_l {
+    position: relative;
+    top: -12px;
+    left: 12px;
+    text-align: left;
+    font-family: "Floripa", serif;
+    font-size: 24px;
+    font-weight: 500;
+    padding-right: 25px;
+    color: #FFBB61;
+}
+
+.team_title_and_type .team_type_s {
+    position: relative;
+    top: -12px;
+    left: 12px;
+    text-align: left;
+    font-family: "Floripa", serif;
+    font-size: 24px;
+    font-weight: 500;
+    padding-right: 25px;
+    color: #95CC7D;
 }
 
 .team_page .team_info .team_description p {
@@ -225,12 +287,14 @@
 .team_page .team_info .team_description {
     margin: 20px;
     text-align: left;
+    word-break: break-all;
 }
 
 .team_page .team_info .team_deadline {
     margin: 20px;
     border-radius: 8px;
     border: 3px solid #cc1616;
+    text-align: center;
 }
 
 .team_page .team_info .want_to_team-button {
