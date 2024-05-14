@@ -2,7 +2,7 @@
 
 header a {
     text-decoration: none;
-    color: #222;
+    color: #090909;
 }
 
 header {
@@ -100,7 +100,7 @@ header .nav-link {
     transition: 300ms ease;
 
     &:hover {
-        color: black;
+        color: #090909;
     }
 }
 
@@ -128,7 +128,7 @@ header .entry:hover .entry-actions {
 header .entry:hover .entry-create_team-link {
     font-weight: 600;
     font-size: 17px;
-    color: #000000;
+    color: #090909;
     padding: 7px;
 }
 

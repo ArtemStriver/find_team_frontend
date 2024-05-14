@@ -70,7 +70,7 @@ const ChangeTeam = () => {
                     onChange={e => setNumberOfMembers(e.target.value)}
                     value={number_of_members}
                     type="number"
-                    min="1" max="123"
+                    min="1" max="99"
                     placeholder="Number of members"/>
                 <textarea
                     className="some-input"

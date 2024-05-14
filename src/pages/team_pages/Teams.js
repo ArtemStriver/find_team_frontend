@@ -11,7 +11,6 @@ const Teams = observer(() => {
     const [search, setSearch] = useState("");
     const [sortBy, setSortBy] = useState("create");
     const [searchParams] = useSearchParams();
-    console.log(searchParams.get("type"))
 
     const sorted_teams = team.teams.slice().sort((a, b) => {
         if (sortBy === "deadline") {

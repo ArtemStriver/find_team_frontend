@@ -20,18 +20,34 @@ const TeamData = (data) => {
                 <div className="team_title">{team_data.title}</div>
             </div>
             <div className="team_description">
-                <p>Описание:</p>
+                <p>О файнде:</p>
                 {team_data.team_description}
             </div>
-            <div className="team_deadline">{team_data.team_deadline_at}</div>
+            <div className={
+                team_data?.type_team === 'work' ?
+                    "team_deadline_w"
+                    :
+                    team_data?.type_team === 'lifestyle' ?
+                        "team_deadline_l"
+                        :
+                        "team_deadline_s"
+            }>{team_data.team_deadline_at}</div>
             <div className="team_tags">
-                {team_tags?.tag1}
-                {team_tags?.tag2}
-                {team_tags?.tag3}
-                {team_tags?.tag4}
-                {team_tags?.tag5}
-                {team_tags?.tag6}
-                {team_tags?.tag7}
+                {team_tags?.tag1 !== '' ?
+                    <div className="team_tag">#{team_tags?.tag1}</div>
+                    :
+                    <div></div>
+                }
+                {team_tags?.tag2 !== '' ?
+                    <div className="team_tag">#{team_tags?.tag2}</div>
+                    :
+                    <div></div>
+                }
+                {team_tags?.tag3 !== '' ?
+                    <div className="team_tag">#{team_tags?.tag3}</div>
+                    :
+                    <div></div>
+                }
             </div>
         </div>
     );

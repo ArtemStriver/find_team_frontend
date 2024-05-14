@@ -42,12 +42,12 @@ const TeamPage = () => {
         <div className="team_page">
             <TeamOwnerData data={team_full_data}/>
             <TeamData data={team_full_data}/>
-            <div>
+            <div className='team_data_and_actions'>
                 <TeamNumberOfMembers data={team_full_data}/>
                 {user?.user.id === team_full_data?.owner ?
                     <div>
                         <TeamMembers u_data={user} t_data={team_full_data} m_data={members_list}/>
-                        <TeamApplications data={application_list}/>
+                        <TeamApplications t_data={team_full_data} a_data={application_list}/>
                     </div>
                     :
                     members?.includes(user?.user.id) ?

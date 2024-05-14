@@ -6,6 +6,7 @@
     display: block;
     text-align: center;
     font-family: "Golos Text", sans-serif;
+    color: #090909;
 }
 
 .teams_info_bar {
@@ -60,7 +61,7 @@
     font-weight: 500;
 
     &:focus {
-        border-color: #000
+        border-color: #090909
     }
 }
 
@@ -84,11 +85,11 @@
     transition: 300ms ease;
     
     &:hover {
-        color: #000;
+        color: #090909;
     }
 
     &:checked {
-        color: #000;
+        color: #090909;
     }
 }
 
@@ -174,20 +175,63 @@
 .team_page .team_owner_data {
     position: relative;
     margin: 20px;
-    width: 400px;
-    height: 400px;
     font-size: 23px;
     font-weight: 500;
+
+}
+
+.team_owner_data {
+    width: 400px;
+    height: 400px;
     border-radius: 10px;
-    /*border: 1px solid #333;*/
+}
+
+.team_owner_data_w {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
     background: linear-gradient(to right, #3E7BD8 30%, white 30%);
 }
 
-.team_page .team_owner_data .team_image {
+.team_owner_data_l {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #FFBB61 30%, white 30%);
+}
+
+.team_owner_data_s {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #95CC7D 30%, white 30%);
+}
+
+.team_page .team_owner_data .team_image_w {
     display: block;
     width: 400px;
     height: 345px;
     background-image: url("../../img/work_img.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.team_page .team_owner_data .team_image_l {
+    display: block;
+    width: 400px;
+    height: 345px;
+    background-image: url("../../img/lifestyle_img.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.team_page .team_owner_data .team_image_s {
+    display: block;
+    width: 400px;
+    height: 345px;
+    background-image: url("../../img/sport_img.svg");
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
@@ -212,13 +256,15 @@
     transition: 0.3s ease;
 
     &:hover {
-        color: #000;
+        color: #090909;
     }
 }
 
+/*_______________________________*/
+
 .team_page .team_info {
     display: block;
-    width: 550px;
+    width: 500px;
     margin: 20px;
 }
 
@@ -235,7 +281,7 @@
     padding-left: 35px;
     padding-right: 35px;
     padding-bottom: 10px;
-    font-size: 45px;
+    font-size: 40px;
     font-weight: 600;
     text-align: center;
     word-break: break-all;
@@ -277,35 +323,391 @@
     color: #95CC7D;
 }
 
+.team_page .team_info .team_description {
+    margin-top: 22px;
+    text-align: left;
+    word-break: break-all;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px 20px 20px;
+}
+
 .team_page .team_info .team_description p {
     margin: 10px;
     text-align: left;
-    font-size: 27px;
-    font-weight: 500;
+    font-size: 28px;
+    font-weight: 600;
 }
 
-.team_page .team_info .team_description {
-    margin: 20px;
-    text-align: left;
-    word-break: break-all;
-}
-
-.team_page .team_info .team_deadline {
-    margin: 20px;
+.team_page .team_info .team_deadline_w {
+    margin: 35px;
+    font-size: 20px;
+    background-color: white;
     border-radius: 8px;
-    border: 3px solid #cc1616;
+    border: 1px solid #B2CAEF;
+    text-align: center;
+    transition: 0.15s ease;
+
+    &:hover {
+        border: 1px solid #3E7BD8;
+    }
+}
+
+.team_page .team_info .team_deadline_l {
+    margin: 35px;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #FFE4C0;
+    text-align: center;
+    transition: 0.15s ease;
+
+    &:hover {
+        border: 1px solid #FFBB61;
+    }
+}
+
+.team_page .team_info .team_deadline_s {
+    margin: 35px;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #D5EBCB;
+    text-align: center;
+    transition: 0.15s ease;
+
+    &:hover {
+        border: 1px solid #95CC7D;
+    }
+}
+
+.team_info .team_tags {
+    display: flex;
+    font-size: 19px;
+    margin-top: 35px;
+}
+
+.team_info .team_tag {
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px;
+}
+
+/*_______________________________*/
+
+.team_page .team_data_and_actions {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team_page .team_number_of_members {
+    display: block;
+    width: 290px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 10px;
     text-align: center;
 }
 
-.team_page .team_info .want_to_team-button {
-    margin: 40px;
-    width: 200px;
-    height: 60px;
-    float: left;
-    color: #fff;
-    font-size: 22px;
+.team_page .team_number_of_members p {
+    font-size: 30px;
+    font-family: "Golos Text", sans-serif;
+    font-weight: 600;
+    color: white;
+    background:  linear-gradient(to right, #305897 0%, #c18435 53%, #4F835D 100%);
+    border-radius: 10px;
+}
+
+.team_page .team_number_of_members_count {
+    font-family: "Floripa", sans-serif;
+    color: #090909;
+    font-size: 40px;
+    padding: 15px;
+}
+
+.team_page .team_number_of_members_count_w {
+    color: #3E7BD8;
+}
+
+.team_page .team_number_of_members_count_l {
+    color: #FFBB61;
+}
+
+.team_page .team_number_of_members_count_s {
+    color: #95CC7D;
+}
+
+/*_______________________________*/
+
+.team_page .team_members_list_def {
+    display: none;
+}
+
+.team_page .team_members_list_view {
+    display: block;
+}
+
+.team_page .team_members_preview {
+    background:  linear-gradient(to right, #B2CAEF 0%, #FFE4C0 53%, #D5EBCB 100%);
+    border-radius: 10px;
+    border: 2px solid #5A5A5A;
+    color: #5A5A5A;
+    font-size: 20px;
+    padding: 5px 20px;
+    text-align: center;
+    transition: 0.3s ease;
+
+    &:hover {
+        border: 2px solid #090909;
+        color: #090909;
+    }
+}
+
+.team_page .team_members_preview_w {
+    display: block;
+    text-decoration: none;
+    background:  linear-gradient(to right, #B2CAEF 0%, #FFE4C0 53%, #D5EBCB 100%);
+    border-radius: 10px;
+    color: #5A5A5A;
+    font-size: 20px;
+    padding: 5px 20px;
+    text-align: center;
+    border: 2px solid #B2CAEF;
+    transition: 0.3s ease;
+    margin-bottom: 10px;
+
+    &:hover {
+        border: 2px solid #3E7BD8;
+        color: #090909;
+    }
+}
+
+.team_page .team_members_preview_l {
+    display: block;
+    text-decoration: none;
+    background:  linear-gradient(to right, #B2CAEF 0%, #FFE4C0 53%, #D5EBCB 100%);
+    border-radius: 10px;
+    color: #5A5A5A;
+    font-size: 20px;
+    padding: 5px 20px;
+    text-align: center;
+    border: 2px solid #FFE4C0;
+    transition: 0.3s ease;
+    margin-bottom: 10px;
+
+    &:hover {
+        border: 2px solid #FFBB61;
+        color: #090909;
+    }
+}
+
+.team_page .team_members_preview_s {
+    display: block;
+    text-decoration: none;
+    background:  linear-gradient(to right, #B2CAEF 0%, #FFE4C0 53%, #D5EBCB 100%);
+    border-radius: 10px;
+    color: #5A5A5A;
+    font-size: 20px;
+    padding: 5px 20px;
+    text-align: center;
+    border: 2px solid #D5EBCB;
+    transition: 0.3s ease;
+    margin-bottom: 10px;
+
+    &:hover {
+        border: 2px solid #95CC7D;
+        color: #090909;
+    }
+}
+
+.team_members_link {
+    display: block;
+    width: 280px;
+    word-break: break-all;
+    color: #5A5A5A;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.3s ease;
+
+    &:hover {
+        color: #090909;
+    }
+}
+
+.team_members_button {
+    display: block;
+    margin-left: 200px;
+    padding: 3px;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #ff7e7e;
+    color: #ff7e7e;
+    margin-bottom: 5px;
+
+    &:hover {
+        border: 1px solid #cd0b0b;
+        color: #cd0b0b;
+    }
+}
+
+.team_applications_button_take {
+    display: inline-block;
+    padding: 3px;
+    margin-left: 35px;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #D5EBCB;
+    color: #63c13a;
+
+    &:hover {
+        border: 1px solid #307811;
+        color: #307811;
+    }
+}
+
+.team_applications_button_reject {
+    display: inline-block;
+    margin-left: 80px;
+    padding: 3px;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #ff7e7e;
+    color: #ff7e7e;
+
+    &:hover {
+        border: 1px solid #cd0b0b;
+        color: #cd0b0b;
+    }
+}
+
+/*_______________________________*/
+
+.team_page .team_action_buttons {
+    display: block;
+    margin: 20px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    background:  linear-gradient(to right, #3E7BD8 0%, #FFBB61 53%, #95CC7D 100%);
+    border-radius: 10px;
+}
+
+.team_page .change_team-button {
+    padding: 10px;
+    margin: 3px;
+    color: #5A5A5A;
+    font-size: 20px;
     font-weight: 500;
-    border-radius: 8px;
-    background: #ea8f1a;
+    border-radius: 10px;
+    background-color: white;
     border: none;
+    transition: 0.15s ease;
+
+    &:hover {
+        color: #090909;
+    }
+}
+
+.team_page .want_to_team-button {
+    display: block;
+    margin: 20px;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.team_page .want_to_team-button_def {
+    padding: 10px;
+    margin: 3px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    background-color: white;
+    border: 3px solid #5A5A5A;
+    color: #090909;
+}
+
+.team_page .want_to_team-button_w {
+    padding: 10px;
+    margin: 3px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: white;
+    border: 3px solid #B2CAEF;
+    color: #B2CAEF;
+    transition: 0.15s ease;
+
+    &:hover {
+        border: 3px solid #3E7BD8;
+        color: #3E7BD8;
+    }
+}
+
+.team_page .want_to_team-button_l {
+    padding: 10px;
+    margin: 3px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: white;
+    border: 3px solid #FFE4C0;
+    color: #FFE4C0;
+    transition: 0.15s ease;
+
+    &:hover {
+        border: 3px solid #FFBB61;
+        color: #FFBB61;
+    }
+}
+
+.team_page .want_to_team-button_s {
+    padding: 10px;
+    margin: 3px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: white;
+    border: 3px solid #D5EBCB;
+    color: #D5EBCB;
+    transition: 0.15s ease;
+
+    &:hover {
+        border: 3px solid #95CC7D;
+        color: #95CC7D;
+    }
+}
+
+.team_page .leave_team-button {
+    display: block;
+    margin: 20px;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.team_page .leave_team-button_def {
+    padding: 10px;
+    margin: 3px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    background-color: white;
+    border: 3px solid #ff7e7e;
+    color: #ff7e7e;
+
+    &:hover {
+        border: 3px solid #cd0b0b;
+        color: #cd0b0b;
+    }
 }

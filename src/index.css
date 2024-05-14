@@ -16,7 +16,7 @@
 
 body {
     background: #F2F2F2;
-    color: #222;
+    color: #090909;
     font-family: "Golos Text", sans-serif;
     font-weight: 500;
 }
@@ -55,7 +55,7 @@ body {
     padding-left: 10px;
     font-size: 18px;
     line-height: 1.5;
-    color: #212529;
+    color: #090909;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #bdbdbd;

@@ -39,7 +39,7 @@ const TeamActions = (data) => {
     return (
         <div>
             {user_data?.id === team_data?.owner ?
-                <div>
+                <div className="team_action_buttons">
                     <button
                         className="change_team-button"
                         onClick={() => navigate(TEAM_ROUTE + "/change/" + team_data.id)}>
@@ -48,28 +48,47 @@ const TeamActions = (data) => {
                 </div>
                 :
                 members?.includes(user_data?.id) ?
-                    <button
-                        className="leave_team-button"
-                        type="submit"
-                        onClick={() => quitFromTheTeam(team_data.id)}>
-                        Покинуть команду
-                    </button>
+                    <div className="leave_team-button">
+                        <button
+                            className="leave_team-button_def"
+                            type="submit"
+                            onClick={() => quitFromTheTeam(team_data.id)}>
+                            Покинуть команду
+                        </button>
+                    </div>
                     :
                     <div>
-                        <button
-                            className="want_to_team-button"
-                            onClick={() => setActiveModal(true)}>
-                            Хочу в команду
-                        </button>
+                        <div className="want_to_team-button">
+                            <button
+                                className={
+                                    team_data?.type_team === 'work' ?
+                                        "want_to_team-button_w"
+                                        :
+                                        team_data?.type_team === 'lifestyle' ?
+                                            "want_to_team-button_l"
+                                            :
+                                            team_data?.type_team === 'sport' ?
+                                                "want_to_team-button_s"
+                                                :
+                                                'want_to_team-button_def'
+                                }
+                                onClick={() => setActiveModal(true)}>
+                                Хочу в команду
+                            </button>
+                        </div>
                         <Modal active={active} setActive={setActiveModal}>
-                            <h4>Для подачи заявки на вступление отправьте небольшое сопроводительное письмо.</h4>
+                            <p className="">
+                                Для подачи заявки на вступление отправьте небольшое сопроводительное письмо.
+                            </p>
                             <input
                                 className=""
                                 onChange={e => setCoverLetter(e.target.value)}
                                 value={coverLetter}
                                 autoComplete="on"
                                 placeholder="Текст письма"/>
-                            <button className="" type="button" onClick={() => joinInTheTeam(team_data.id, coverLetter)}>Отправить заявку</button>
+                            <button className="" type="button"
+                                    onClick={() => joinInTheTeam(team_data.id, coverLetter)}>Отправить заявку
+                            </button>
                         </Modal>
                     </div>
             }
