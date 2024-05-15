@@ -711,3 +711,44 @@
         color: #cd0b0b;
     }
 }
+
+.want_to_team-modal {
+    display: block;
+    text-align: center;
+}
+
+.want_to_team-title {
+    font-size: 21px;
+}
+
+.want_to_team-input {
+    display: block;
+    text-align: center;
+    width: auto;
+    height: 100px;
+    word-break: break-all;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.want_to_team-send_button {
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    background:  linear-gradient(to right, #3E7BD8 0%, #e89526 53%, #65a34a 100%);
+    border-radius: 10px;
+    color: #5A5A5A;
+    font-size: 17px;
+    font-weight: 700;
+    border: none;
+
+    transition: 0.3s ease;
+
+    &:hover {
+        color: white;
+    }
+}

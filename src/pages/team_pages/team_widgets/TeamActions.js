@@ -8,7 +8,7 @@ import "../team.css"
 const TeamActions = (data) => {
     const user_data = data.u_data.user;
     const team_data = data.t_data;
-    const [active, setActiveModal] = React.useState(false);
+    const [activeJoinIn, setActiveJoinInModal] = React.useState(false);
     const [coverLetter, setCoverLetter] = React.useState();
     const navigate = useNavigate()
 
@@ -36,6 +36,13 @@ const TeamActions = (data) => {
         }
     }
 
+     const checkChoice = async () => {
+        const conf = window.confirm("Точно хотите покинуть команду?");
+        if (conf) {
+            await quitFromTheTeam(team_data.id)
+        }
+    }
+
     return (
         <div>
             {user_data?.id === team_data?.owner ?
@@ -52,7 +59,7 @@ const TeamActions = (data) => {
                         <button
                             className="leave_team-button_def"
                             type="submit"
-                            onClick={() => quitFromTheTeam(team_data.id)}>
+                            onClick={() => checkChoice()}>
                             Покинуть команду
                         </button>
                     </div>
@@ -72,23 +79,27 @@ const TeamActions = (data) => {
                                                 :
                                                 'want_to_team-button_def'
                                 }
-                                onClick={() => setActiveModal(true)}>
+                                onClick={() => setActiveJoinInModal(true)}>
                                 Хочу в команду
                             </button>
                         </div>
-                        <Modal active={active} setActive={setActiveModal}>
-                            <p className="">
-                                Для подачи заявки на вступление отправьте небольшое сопроводительное письмо.
-                            </p>
-                            <input
-                                className=""
-                                onChange={e => setCoverLetter(e.target.value)}
-                                value={coverLetter}
-                                autoComplete="on"
-                                placeholder="Текст письма"/>
-                            <button className="" type="button"
-                                    onClick={() => joinInTheTeam(team_data.id, coverLetter)}>Отправить заявку
-                            </button>
+                        <Modal active={activeJoinIn} setActive={setActiveJoinInModal}>
+                            <div className="want_to_team-modal">
+                                <p className="want_to_team-title">
+                                    Для подачи заявки на вступление,{<br/>}
+                                    отправьте небольшое сопроводительное письмо.
+                                </p>
+                                <textarea
+                                    className="want_to_team-input"
+                                    onChange={e => setCoverLetter(e.target.value)}
+                                    value={coverLetter}
+                                    autoComplete="on"
+                                    maxLength={175}
+                                    placeholder="Текст письма"/>
+                                <button className="want_to_team-send_button" type="button"
+                                        onClick={() => joinInTheTeam(team_data.id, coverLetter)}>Отправить заявку
+                                </button>
+                            </div>
                         </Modal>
                     </div>
             }

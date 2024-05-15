@@ -18,6 +18,13 @@ const TeamMembers = (data) => {
         }
     }
 
+    const checkChoice = async (member) => {
+        const conf = window.confirm("Точно хотите исключить этого человека?");
+        if (conf) {
+            await excludeUserFromTeam(member.user_id, member.team_id)
+        }
+    }
+
     return (
         <div className="team_members">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -48,7 +55,7 @@ const TeamMembers = (data) => {
                             <button
                                 className="team_members_button"
                                 type="submit"
-                                onClick={() => excludeUserFromTeam(member.user_id, member.team_id)}>
+                                onClick={() => checkChoice(member)}>
                                 Исключить
                             </button>
                             :
