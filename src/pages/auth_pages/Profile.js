@@ -8,6 +8,7 @@ import ProfileTeamsIAmOn from "./profile_widgets/ProfileTeamsIAmOn";
 import {getProfileData} from "../../http/userAPI";
 import {getMyTeams, getTeamsMyParticipation} from "../../http/teamAPI";
 // import {useParams} from "react-router-dom";
+import "./auth.css"
 
 
 const Profile = () => {
@@ -15,27 +16,26 @@ const Profile = () => {
     const {team} = useContext(Context)
     const [profile_data, setProfileData] = useState([])
     const userProfileId = window.location.href.split("/")[4]
-    // TODO выямнить почему не могу получить id через useParams
+    // TODO выяcнить почему не могу получить id через useParams
     // const {id} = useParams()
     // console.log(id, userProfileId)
 
     useEffect(() => {
         getMyTeams().then(data => team.setMyTeams(data))
-    }, [])
+    }, [team])
 
     useEffect(() => {
         getTeamsMyParticipation().then(data => team.setMyTeamsParticipation(data))
-    }, [])
+    }, [team])
 
     useEffect(() => {
         getProfileData(userProfileId).then(data => setProfileData(data))
-    }, [user])
+    }, [user, userProfileId])
     user.setProfile(profile_data)
 
     return (
         <div className="profile-page">
-            {/*TODO добавить кнопку изменения данных профиля и удаление профиля*/}
-            <ProfileImage data={profile_data}/>
+            <ProfileImage />
             <ProfileData data={profile_data}/>
             <ProfileHobbies data={profile_data}/>
             {user.user.id === userProfileId ?
@@ -44,7 +44,7 @@ const Profile = () => {
                     <ProfileTeamsIAmOn team={team}/>
                 </div>
                 :
-                <div>Null</div>
+                <div></div>
             }
 
         </div>

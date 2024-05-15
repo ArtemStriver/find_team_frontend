@@ -32,7 +32,6 @@ const App = observer(() => {
     return (
         <div className="wrapper">
             <Router>
-                {/*TODO возможно надо будет сделать хедер на каждой странице*/}
                 <Header/>
                 <AppRouter/>
                 <Footer/>

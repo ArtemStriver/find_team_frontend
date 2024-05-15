@@ -1,12 +1,11 @@
 import React from 'react';
+import "../auth.css"
 
-const ProfileImage = (data) => {
-    const user_data = data.data;
+const ProfileImage = () => {
 
     return (
-        <div>
-            *дефолтная картинка*
-            {user_data.image_path}
+        <div className="profile_image">
+            <div className="profile_image_img"></div>
         </div>
     );
 };

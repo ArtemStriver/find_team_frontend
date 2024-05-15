@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {HOME_ROUTE, PROFILE_ROUTE} from "../../utils/consts";
 import {Context} from "../../index";
 import {changeProfile, deleteProfile, logout} from "../../http/userAPI";
+import "./auth.css"
 
 const ChangeProfile = () => {
     const {user} = useContext(Context)
@@ -12,7 +13,6 @@ const ChangeProfile = () => {
     const [vk, setVk] = useState(user?.profile.contacts.vk);
     const [telegram, setTelegram] = useState(user?.profile.contacts.telegram);
     const [discord, setDiscord] = useState(user?.profile.contacts.discord);
-    const [other, setOther] = useState(user?.profile.contacts.other);
     const [description, setDescription] = useState(user?.profile.description);
     const [lifestyle1, setLifestyle1] = useState(user?.profile.hobbies.lifestyle1);
     const [sport1, setSport1] = useState(user?.profile.hobbies.sport1);
@@ -24,7 +24,7 @@ const ChangeProfile = () => {
                                 vk,
                                 telegram,
                                 discord,
-                                other,
+                                null,
                                 description,
                                 lifestyle1,
                                 sport1,
@@ -79,13 +79,6 @@ const ChangeProfile = () => {
                     onChange={e => setDiscord(e.target.value)}
                     type="text"
                     placeholder="discord"/>
-                <input
-                    className="some-input"
-                    id="other"
-                    value={other}
-                    onChange={e => setOther(e.target.value)}
-                    type="text"
-                    placeholder="other"/>
                 <textarea
                     className="some-input"
                     id="description"
@@ -98,6 +91,7 @@ const ChangeProfile = () => {
                     value={lifestyle1}
                     onChange={e => setLifestyle1(e.target.value)}
                     type="text"
+                    maxLength="26"
                     placeholder="lifestyle1"/>
                 <input
                     className="some-input"
@@ -105,6 +99,7 @@ const ChangeProfile = () => {
                     value={sport1}
                     onChange={e => setSport1(e.target.value)}
                     type="text"
+                    maxLength="26"
                     placeholder="sport1"/>
                 <input
                     className="some-input"
@@ -112,6 +107,7 @@ const ChangeProfile = () => {
                     value={work1}
                     onChange={e => setWork1(e.target.value)}
                     type="text"
+                    maxLength="26"
                     placeholder="work1"/>
                 <br/><br/>
                 <button className="login-button" type="button" onClick={changeThisProfile}>Изменить профиль</button>

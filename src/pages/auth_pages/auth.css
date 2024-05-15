@@ -1,0 +1,231 @@
+
+.profile-page {
+    width: 1280px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: "Golos Text", sans-serif;
+    color: #090909;
+}
+
+.profile-page .profile_image {
+    padding: 20px;
+}
+
+.profile-page .profile_image_img {
+    display: block;
+    width: 400px;
+    height: 345px;
+    background-image: url("../../img/sport_img.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+
+/*_______________________________*/
+
+.profile_data {
+    display: block;
+    padding: 20px;
+    width: 500px;
+    text-align: left;
+}
+
+.profile_data .name_and_change {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    text-align: left;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.profile_data .profile_username {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 10px;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: left;
+    word-break: break-all;
+}
+
+.profile_data .profile_change-button {
+    position: relative;
+    top: -1px;
+    left: 12px;
+    text-align: left;
+    font-size: 22px;
+    font-weight: 500;
+    padding-right: 25px;
+    color: #5A5A5A;
+    transition: 0.15s ease;
+    text-decoration: none;
+
+    &:hover {
+        color: #090909;
+    }
+}
+
+.profile_data .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    width: 460px;
+}
+
+.profile_data .contact_item {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.profile_data .contact_item_icon_e {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url("../../img/email_icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 3px;
+}
+
+.profile_data .contact_item_icon_t {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url("../../img/telegram_ikon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 3px;
+}
+
+.profile_data .contact_item_icon_v {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url("../../img/vk_ikon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 3px;
+}
+
+.profile_data .contact_item_icon_d {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url("../../img/discord_ikon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 3px;
+}
+
+.profile_data .contact_item-text {
+    font-size: 16px;
+}
+
+.profile_description {
+    width: 460px;
+    margin-top: 22px;
+    text-align: left;
+    word-break: break-all;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px 20px 20px;
+    margin-bottom: 20px;
+}
+
+.profile_description p {
+    margin: 10px;
+    text-align: left;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/*_______________________________*/
+
+.profile_hobbies {
+    display: block;
+    padding: 20px;
+}
+
+.profile_hobbies p {
+    font-size: 25px;
+    font-family: "Golos Text", sans-serif;
+    font-weight: 600;
+    color: white;
+    background:  linear-gradient(to right, #305897 0%, #c18435 53%, #4F835D 100%);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.profile_hobbies .profile_hobby_l {
+    width: 250px;
+    height: auto;
+    margin: 15px auto;
+    font-size: 23px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #FFBB61;
+    word-break: break-all;
+}
+
+.profile_hobbies .profile_hobby_l_def {
+    display: none;
+}
+
+.profile_hobbies .profile_hobby_s {
+    width: 250px;
+    height: auto;
+    margin: 15px auto;
+    font-size: 23px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #95CC7D;
+    word-break: break-all;
+}
+
+.profile_hobbies .profile_hobby_s_def {
+    display: none;
+}
+
+.profile_hobbies .profile_hobby_w {
+    width: 250px;
+    height: auto;
+    margin: 15px auto;
+    font-size: 23px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #3E7BD8;
+    word-break: break-all;
+}
+
+.profile_hobbies .profile_hobby_w_def {
+    display: none;
+}
+
+/*_______________________________*/
+
+.profile-teams_title {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    text-align: left;
+    padding: 20px;
+    font-size: 25px;
+    font-family: "Golos Text", sans-serif;
+    font-weight: 600;
+    color: #090909;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: -30px;
+}
+
+.profile-teams_title_count {
+    font-family: "Floripa", sans-serif;
+    font-size: 45px;
+    color: #a3a0a0;
+}

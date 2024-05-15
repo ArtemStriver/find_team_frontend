@@ -3,6 +3,7 @@ import {observer} from "mobx-react-lite";
 import {register} from "../../http/userAPI";
 import {useNavigate} from "react-router-dom";
 import {HOME_ROUTE} from "../../utils/consts";
+import "./auth.css"
 
 
 const RegisterForm = observer(() => {
