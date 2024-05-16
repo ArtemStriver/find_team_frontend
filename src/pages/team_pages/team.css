@@ -696,7 +696,7 @@
     text-align: center;
 }
 
-.team_page .leave_team-button_def {
+.leave_team-button_def {
     padding: 10px;
     margin: 3px;
     font-size: 20px;
@@ -750,5 +750,176 @@
 
     &:hover {
         color: white;
+    }
+}
+
+/*_______________________________*/
+
+.team_form_page {
+    width: 1280px;
+    margin: 50px auto;
+    display: block;
+    text-align: center;
+}
+
+.team_form_page p {
+    color: #090909;
+    font-family: "Floripa", serif;
+    font-size: 39px;
+    font-weight: 100;
+}
+
+.team_form_page a {
+    display: block;
+    margin: 30px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.team_form {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.15s ease;
+}
+
+.team_form_def input, .team_form_def textarea, .team_form_def select {
+    border: 1px solid #bdbdbd;
+}
+
+.team_form_l input, .team_form_l textarea, .team_form_l select {
+    border: 2px solid #FFBB61;
+}
+
+.team_form_w input, .team_form_w textarea, .team_form_w select {
+    border: 2px solid #3E7BD8;
+}
+
+.team_form_s input, .team_form_s textarea, .team_form_s select {
+    border: 2px solid #95CC7D;
+}
+
+.team_form-input {
+    display: block;
+    text-align: center;
+    width: 320px;
+    height: 40px;
+    margin: 15px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #090909;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 8px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.team_form-select_and_number {
+    display: flex;
+    margin: 15px;
+    justify-content: center;
+    gap: 30px;
+}
+
+.team_form-input_numb {
+    display: block;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 7px;
+    color: #090909;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 8px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.team_form-select {
+    background-color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 7px 15px;
+}
+
+.team_form-select_l {
+    background-color: #FFE4C0;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 7px 15px;
+}
+
+.team_form-select_w {
+    background-color: #B2CAEF;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 7px 15px;
+}
+
+.team_form-select_s {
+    background-color: #D5EBCB;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 7px 15px;
+}
+
+.team_form-select-op {
+    background-color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 7px 15px;
+}
+
+#deadline {
+    border: 2px solid #ff7e7e;
+}
+
+.team_form-textarea {
+    width: 300px;
+    height: 150px;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 15px;
+}
+
+.team_form-input_tags {
+    display: flex;
+    justify-content: center;
+}
+
+#tags {
+    width: 90px;
+    margin: auto;
+}
+
+.team_form-button {
+    display: block;
+    margin: 30px auto;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    background:  linear-gradient(to right, #B2CAEF 0%, #FFE4C0 53%, #D5EBCB 100%);
+    border-radius: 10px;
+    color: #5A5A5A;
+    font-size: 17px;
+    font-weight: 700;
+    border: none;
+
+    transition: 0.3s ease;
+
+    &:hover {
+        color: white;
+        background:  linear-gradient(to right, #3E7BD8 0%, #e89526 53%, #65a34a 100%);
     }
 }

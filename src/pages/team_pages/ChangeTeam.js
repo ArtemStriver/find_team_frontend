@@ -9,20 +9,41 @@ const ChangeTeam = () => {
     const {team} = useContext(Context)
     const navigate = useNavigate()
 
-    const [title, setTitle] = useState(team?.team_now.title);
-    const [type_team, setTypeTeam] = useState(team?.team_now.type_team);
-    const [number_of_members, setNumberOfMembers] = useState(team?.team_now.number_of_members);
-    const [description, setDescription] = useState(team?.team_now.team_description);
-    const [deadline_at, setDeadline] = useState(team?.team_now.team_deadline_at);
-    const [team_city, setTeamCity] = useState(team?.team_now.team_city);
-    const [tag1, setTag1] = useState(team?.team_now.tags.tag1);
-    const [tag2, setTag2] = useState(team?.team_now.tags.tag2);
-    const [tag3, setTag3] = useState(team?.team_now.tags.tag3);
+    const team_data =
+        team.team_now.title !== undefined ?
+            [
+                team?.team_now.id,
+                team?.team_now.title,
+                team?.team_now.type_team,
+                team?.team_now.number_of_members,
+                team?.team_now.team_description,
+                team?.team_now.team_deadline_at,
+                team?.team_now.team_city,
+                team?.team_now?.tags?.tag1,
+                team?.team_now?.tags?.tag2,
+                team?.team_now?.tags?.tag3
+            ]
+            :
+            JSON.parse(localStorage.getItem('team_now'));
+    if (team_data[0] !== undefined) {
+        localStorage.setItem('team_now', JSON.stringify(team_data));
+    }
+
+    const [title, setTitle] = useState(team_data[1]);
+    const [type_team, setTypeTeam] = useState(team_data[2]);
+    const [number_of_members, setNumberOfMembers] = useState(team_data[3]);
+    const [description, setDescription] = useState(team_data[4]);
+    const [deadline_at, setDeadline] = useState(team_data[5]);
+    const [team_city, setTeamCity] = useState(team_data[6]);
+    const [tag1, setTag1] = useState(team_data[7]);
+    const [tag2, setTag2] = useState(team_data[8]);
+    const [tag3, setTag3] = useState(team_data[9]);
 
     const changeThisTeam = async () => {
         try {
+            console.log(type_team)
             await changeTeam(
-                team.team_now.id,
+                team_data[0],
                 title,
                 type_team,
                 number_of_members,
@@ -30,7 +51,7 @@ const ChangeTeam = () => {
                 deadline_at,
                 team_city,
                 tag1, tag2, tag3);
-            navigate(TEAM_ROUTE + "/" + team.team_now.id)
+            navigate(TEAM_ROUTE + "/" + team_data[0])
         } catch (e) {
             console.log(e)
         }
@@ -38,90 +59,137 @@ const ChangeTeam = () => {
     const deleteThisTeam = async (id) => {
         try {
             await deleteTeam(id);
-            navigate(HOME_ROUTE)
+            localStorage.deleteItem('team_now');
+            // TODO почему не работает???
+            navigate(HOME_ROUTE);
         } catch (e) {
             console.log(e)
         }
     }
+
+    const checkChoice = async () => {
+        const conf = window.confirm("Точно хотите удалить команду?");
+        if (conf) {
+            await deleteThisTeam(team_data[0]);
+        }
+    }
+
     return (
-        <div className="form-page">
-            <h1>Change Your Team</h1>
-            <form className="some-form">
-                <input
-                    className="some-input"
-                    id="title"
-                    value={title}
-                    onChange={e => setTitle(e.target.value)}
-                    type="text"
-                    placeholder="Title"/>
-                <select
-                    // TODO кнопка меняет цвет при выборе типа команды
-                    className="some-input"
-                    id="typeTeam"
-                    onChange={e => setTypeTeam(e.target.value)}
-                    value={type_team}>
-                    <option value="work">Работа</option>
-                    <option value="lifestyle">Лайфстайл</option>
-                    <option value="sport">Спорт</option>
-                </select>
-                <input
-                    className="some-input"
-                    id="number_of_members"
-                    onChange={e => setNumberOfMembers(e.target.value)}
-                    value={number_of_members}
-                    type="number"
-                    min="1" max="99"
-                    placeholder="Number of members"/>
-                <textarea
-                    className="some-input"
-                    id="description"
-                    onChange={e => setDescription(e.target.value)}
-                    value={description}
-                    placeholder="Description"/>
-                <input
-                    className="some-input"
-                    id="deadline"
-                    onChange={e => setDeadline(e.target.value)}
-                    value={deadline_at}
-                    type="date"
-                    placeholder="Deadline"/>
-                <input
-                    className="some-input"
-                    id="team_city"
-                    onChange={e => setTeamCity(e.target.value)}
-                    value={team_city}
-                    type="text"
-                    placeholder="City"/>
-                <input
-                    className="some-input"
-                    id="tag1"
-                    onChange={e => setTag1(e.target.value)}
-                    value={tag1}
-                    type="text"
-                    placeholder="Tag1"/>
-                <input
-                    className="some-input"
-                    id="tags"
-                    onChange={e => setTag2(e.target.value)}
-                    value={tag2}
-                    type="text"
-                    placeholder="Tag2"/>
-                <input
-                    className="some-input"
-                    id="tags"
-                    onChange={e => setTag3(e.target.value)}
-                    value={tag3}
-                    type="text"
-                    placeholder="Tag3"/>
-                <br/><br/>
-                <button className="login-button" type="button" onClick={changeThisTeam}>Изменить команду</button>
-                <br/><br/>
+        <div className="team_form_page">
+            <p>ИЗМЕНИТЬ ДАННЫЕ КОМАНДЫ</p>
+            <form className="team_form">
+                <div className={
+                    type_team === 'work' ?
+                        "team_form_w"
+                        :
+                        type_team === 'lifestyle' ?
+                            "team_form_l"
+                            :
+                            type_team === 'sport' ?
+                                "team_form_s"
+                                :
+                                'team_form_def'
+                }>
+                    <input
+                        className="team_form-input"
+                        id="title"
+                        onChange={e => setTitle(e.target.value)}
+                        value={title}
+                        type="text"
+                        placeholder="Название команды"
+                        maxLength={50}/>
+                    <div className="team_form-select_and_number">
+                        <select
+                            className={
+                                type_team === 'work' ?
+                                    "team_form-select_w"
+                                    :
+                                    type_team === 'lifestyle' ?
+                                        "team_form-select_l"
+                                        :
+                                        type_team === 'sport' ?
+                                            "team_form-select_s"
+                                            :
+                                            "team_form-select"
+                            }
+                            id="typeTeam"
+                            onChange={e => setTypeTeam(e.target.value)}
+                            value={type_team}>
+                            <option className="team_form-select-op" value=""></option>
+                            <option className="team_form-select-op" value="lifestyle">Лайфстайл</option>
+                            <option className="team_form-select-op" value="work">Работа</option>
+                            <option className="team_form-select-op" value="sport">Спорт</option>
+                        </select>
+                        <input
+                            className="team_form-input_numb"
+                            id="number_of_members"
+                            onChange={e => setNumberOfMembers(e.target.value)}
+                            value={number_of_members}
+                            type="number"
+                            min="1" max="99"
+                            placeholder="Количество участников"/>
+                    </div>
+                    <textarea
+                        className="team_form-textarea"
+                        id="description"
+                        onChange={e => setDescription(e.target.value)}
+                        value={description}
+                        maxLength={300}
+                        placeholder="Описание команды"/>
+                    <input
+                        className="team_form-input"
+                        id="deadline"
+                        onChange={e => setDeadline(e.target.value)}
+                        value={deadline_at}
+                        type="date"
+                        placeholder="Срок сбора команды"/>
+                    <input
+                        className="team_form-input"
+                        id="team_city"
+                        onChange={e => setTeamCity(e.target.value)}
+                        value={team_city}
+                        type="text"
+                        maxLength={30}
+                        placeholder="Место сбора"/>
+                    <div className="team_form-input_tags">
+                        <input
+                            className="team_form-input"
+                            id="tags"
+                            onChange={e => setTag1(e.target.value)}
+                            value={tag1}
+                            type="text"
+                            maxLength={12}
+                            placeholder="Тег 1"/>
+                        <input
+                            className="team_form-input"
+                            id="tags"
+                            onChange={e => setTag2(e.target.value)}
+                            value={tag2}
+                            type="text"
+                            maxLength={12}
+                            placeholder="Тег 2"/>
+                        <input
+                            className="team_form-input"
+                            id="tags"
+                            onChange={e => setTag3(e.target.value)}
+                            value={tag3}
+                            type="text"
+                            maxLength={12}
+                            placeholder="Тег 3"/>
+                    </div>
+                    <button
+                        className="team_form-button"
+                        type="button"
+                        onClick={changeThisTeam}>
+                        Изменить команду
+                    </button>
+                    <button
+                        className="leave_team-button_def"
+                        onClick={() => checkChoice()}>
+                        Удалить команду
+                    </button>
+                </div>
             </form>
-            <button
-                className="delete_team-button"
-                onClick={() => deleteThisTeam(team.team_now.id)}>
-                Удалить команду
-            </button>
         </div>
     );
 };
