@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {joinInTeam, quitFromTeam} from "../../../http/teamActionAPI";
 import Modal from "./team_modal/Modal";
 import {TEAM_ROUTE} from "../../../utils/consts";
 import {useNavigate} from "react-router-dom";
 import "../team.css"
+import {Context} from "../../../index";
+import {observer} from "mobx-react-lite";
 
 const TeamActions = (data) => {
     const user_data = data.u_data.user;
     const team_data = data.t_data;
+    const {team} = useContext(Context)
     const [activeJoinIn, setActiveJoinInModal] = React.useState(false);
     const [coverLetter, setCoverLetter] = React.useState();
     const navigate = useNavigate()
@@ -42,6 +45,8 @@ const TeamActions = (data) => {
             await quitFromTheTeam(team_data.id)
         }
     }
+
+    team.setTeamNow(team_data)
 
     return (
         <div>
@@ -107,4 +112,4 @@ const TeamActions = (data) => {
     );
 };
 
-export default TeamActions;
+export default observer(TeamActions);

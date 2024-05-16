@@ -9,6 +9,7 @@ import TeamActions from "./team_widgets/TeamActions";
 import TeamApplications from "./team_widgets/TeamApplications";
 import TeamNumberOfMembers from "./team_widgets/TeamNumberOfMembers";
 import "./team.css"
+import {observer} from "mobx-react-lite";
 
 const TeamPage = () => {
     const {user} = useContext(Context)
@@ -64,4 +65,4 @@ const TeamPage = () => {
     );
 };
 
-export default TeamPage;
+export default observer(TeamPage);

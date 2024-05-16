@@ -1,16 +1,18 @@
 import React, {useContext, useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import {HOME_ROUTE, TEAM_ROUTE} from "../../utils/consts";
+import {PROFILE_ROUTE, TEAM_ROUTE} from "../../utils/consts";
 import {Context} from "../../index";
 import {changeTeam, deleteTeam} from "../../http/teamAPI";
 import "./team.css"
+import {observer} from "mobx-react-lite";
 
 const ChangeTeam = () => {
+    const {user} = useContext(Context)
     const {team} = useContext(Context)
     const navigate = useNavigate()
 
     const team_data =
-        team.team_now.title !== undefined ?
+        Object.keys(team.team_now).length !== 0 ?
             [
                 team?.team_now.id,
                 team?.team_now.title,
@@ -25,7 +27,8 @@ const ChangeTeam = () => {
             ]
             :
             JSON.parse(localStorage.getItem('team_now'));
-    if (team_data[0] !== undefined) {
+
+    if (Object.keys(team.team_now).length !== 0) {
         localStorage.setItem('team_now', JSON.stringify(team_data));
     }
 
@@ -58,19 +61,18 @@ const ChangeTeam = () => {
     }
     const deleteThisTeam = async (id) => {
         try {
+            localStorage.setItem('team_now', JSON.stringify([]));
             await deleteTeam(id);
-            localStorage.deleteItem('team_now');
-            // TODO почему не работает???
-            navigate(HOME_ROUTE);
+            navigate(PROFILE_ROUTE + "/" + user.user.id);
         } catch (e) {
             console.log(e)
         }
     }
 
-    const checkChoice = async () => {
+    const checkChoice = async (id) => {
         const conf = window.confirm("Точно хотите удалить команду?");
         if (conf) {
-            await deleteThisTeam(team_data[0]);
+            await deleteThisTeam(id)
         }
     }
 
@@ -184,8 +186,9 @@ const ChangeTeam = () => {
                         Изменить команду
                     </button>
                     <button
+                        type="button"
                         className="leave_team-button_def"
-                        onClick={() => checkChoice()}>
+                        onClick={() => checkChoice(team_data[0])}>
                         Удалить команду
                     </button>
                 </div>
@@ -194,4 +197,4 @@ const ChangeTeam = () => {
     );
 };
 
-export default ChangeTeam;
+export default observer(ChangeTeam);

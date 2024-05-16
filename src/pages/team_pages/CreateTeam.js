@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import {HOME_ROUTE} from "../../utils/consts";
+import {PROFILE_ROUTE} from "../../utils/consts";
 import {createTeam} from "../../http/teamAPI";
 import "./team.css"
+import {Context} from "../../index";
 
 const CreateTeam = () => {
+    const {user} = useContext(Context)
+
     const [title, setTitle] = useState("");
     const [type_team, setTypeTeam] = useState("lifestyle");
     const [number_of_members, setNumberOfMembers] = useState(1);
@@ -28,7 +31,7 @@ const CreateTeam = () => {
                 deadline_at,
                 team_city,
                 tag1, tag2, tag3);
-            navigate(HOME_ROUTE)
+            navigate(PROFILE_ROUTE + "/" + user.user.id)
         } catch (e) {
             console.log(e)
         }
