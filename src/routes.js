@@ -5,7 +5,7 @@ import {
     PROFILE_ROUTE,
     REGISTER_ROUTE,
     TEAM_ROUTE,
-    TEAMS_ROUTE
+    TEAMS_ROUTE,
 } from "./utils/consts";
 import Teams from "./pages/team_pages/Teams";
 import Home from "./pages/main_pages/Home";
@@ -16,6 +16,8 @@ import CreateTeam from "./pages/team_pages/CreateTeam";
 import Profile from "./pages/auth_pages/Profile"
 import ChangeTeam from "./pages/team_pages/ChangeTeam";
 import ChangeProfile from "./pages/auth_pages/ChangeProfile";
+import RecoverPassword from "./pages/auth_pages/RecoverPassword";
+import ChangePassword from "./pages/auth_pages/ChangePassword";
 
 export const authRoutes = [
     {
@@ -56,5 +58,13 @@ export const publicRoutes = [
     {
         path: TEAMS_ROUTE,
         Component: Teams
+    },
+    {
+        path: PROFILE_ROUTE + "/recover_password",
+        Component: RecoverPassword
+    },
+    {
+        path: PROFILE_ROUTE + "/change_password/:token",
+        Component: ChangePassword
     },
 ]

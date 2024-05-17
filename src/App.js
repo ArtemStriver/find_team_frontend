@@ -23,11 +23,11 @@ const App = observer(() => {
             user.setIsAuth(false);
             user.setUser();
         }
-    }, [])
+    }, [user])
 
     useEffect(() => {
         getTeams().then(data => team.setTeams(data))
-    }, [])
+    }, [team])
 
     return (
         <div className="wrapper">

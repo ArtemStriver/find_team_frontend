@@ -27,6 +27,7 @@ const TeamApplications = (data) => {
 
     return (
         <div className='team_members'>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className={
                 team_data?.type_team === 'work' ?
                     "team_members_preview_w"

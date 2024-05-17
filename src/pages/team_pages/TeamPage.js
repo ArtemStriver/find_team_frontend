@@ -27,15 +27,15 @@ const TeamPage = () => {
 
     useEffect(() => {
         getOneTeams(id).then(data => setTeamFullData(data.data))
-    }, []);
+    }, [id]);
 
     useEffect(() => {
         getApplicationList(id).then(data => setApplicationList(data))
-    }, [])
+    }, [id])
 
     useEffect(() => {
         getMembersList(id).then(data => setMembersList(data))
-    }, [])
+    }, [id])
 
     team.setTeamNow(team_full_data)
 

@@ -14,6 +14,7 @@ const ProfileData = (data) => {
         <div className="profile_data">
             <div className="name_and_change">
                 {user_data.user_id === user.user.id ?
+                    // eslint-disable-next-line jsx-a11y/anchor-is-valid
                     <a
                         href="#"
                         className="profile_change-button"

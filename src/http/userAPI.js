@@ -62,3 +62,14 @@ export const changeProfile = async (
 export const deleteProfile = async () => {
     return await authApi.delete("/profile/delete")
 }
+
+export const reset_password = async (email) => {
+    return await api.post("/auth/password_recovery?email=" + email)
+}
+
+export const change_password = async (token, hashed_password, confirmed_password) => {
+    return await api.post("/auth/change_password?token=" + token, {
+        "hashed_password": hashed_password,
+        "confirmed_password": confirmed_password}
+    )
+}

@@ -23,48 +23,50 @@ const RegisterForm = observer(() => {
         }
     }
     return (
-        <>
-            <div className="form-page">
-                <h2>Рагистрация</h2>
-                <form className="some-form">
-                    <input
-                        className="some-input"
-                        id="username"
-                        onChange={e => setUsername(e.target.value)}
-                        value={username}
-                        type="text"
-                        maxLength="14"
-                        placeholder="Username"/>
-                    <input
-                        className="some-input"
-                        id="email"
-                        onChange={e => setEmail(e.target.value)}
-                        value={email}
-                        type="text"
-                        placeholder="Email"/>
-                    <input
-                        className="some-input"
-                        id="hashed_password"
-                        onChange={e => setHashedPassword(e.target.value)}
-                        value={hashed_password}
-                        autoComplete="on"
-                        type="password"
-                        placeholder="Password"/>
-                    <input
-                        className="some-input"
-                        id="confirmed_password"
-                        onChange={e => setConfirmedPassword(e.target.value)}
-                        value={confirmed_password}
-                        autoComplete="on"
-                        type="password"
-                        placeholder="Confirme password"/>
-                </form>
-                <br/>
-                <button className="login-button" type="button" onClick={signUp}>Регистрация</button>
-                <br/>
-                <a href="/login">Логин</a>
-            </div>
-        </>
+        <div className="login_form_page">
+            <p>РЕГИСТРАЦИЯ</p>
+            <form className="some-form">
+                <input
+                    className="some-input"
+                    required="required"
+                    id="username"
+                    onChange={e => setUsername(e.target.value)}
+                    value={username}
+                    type="text"
+                    maxLength="14"
+                    placeholder="Name"/>
+                <input
+                    className="some-input"
+                    required="required"
+                    id="email"
+                    onChange={e => setEmail(e.target.value)}
+                    value={email}
+                    type="email"
+                    placeholder="Email"/>
+                <input
+                    className="some-input"
+                    required="required"
+                    id="hashed_password"
+                    onChange={e => setHashedPassword(e.target.value)}
+                    value={hashed_password}
+                    autoComplete="on"
+                    type="password"
+                    maxLength={30}
+                    placeholder="Пароль"/>
+                <input
+                    className="some-input"
+                    required="required"
+                    id="confirmed_password"
+                    onChange={e => setConfirmedPassword(e.target.value)}
+                    value={confirmed_password}
+                    autoComplete="on"
+                    type="password"
+                    maxLength={30}
+                    placeholder="Повторите пароль"/>
+                <button type="button" className="login_form_button" onClick={signUp}>Регистрация</button>
+            </form>
+            <a className="login_form_register-link" href="/login">Логин</a>
+        </div>
     );
 });
 

@@ -61,11 +61,13 @@ const Teams = observer(() => {
                     <div className="teams_filter">
                         <ul className="teams_filter_list">
                             <li className="teams_filter_item">
+                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                 <a className="teams_filter_link" href="#" onClick={() => setSortBy("deadline")}>
                                     По дате дедлайна
                                 </a>
                             </li>
                             <li className="teams_filter_item">
+                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                 <a className="teams_filter_link" href="#" onClick={() => setSortBy("create")}>
                                     По дате создания
                                 </a>
