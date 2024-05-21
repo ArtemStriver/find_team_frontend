@@ -13,8 +13,8 @@ const Header = observer(() => {
         <header>
             <Logo />
             <Nav />
-            <Entry data={user}/>
             <Burger />
+            <Entry data={user}/>
         </header>
     );
 });

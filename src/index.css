@@ -82,14 +82,14 @@ footer {
     }
 }
 
-/*@media (max-width: 920px) {*/
-/*    .wrapper {*/
-/*        width: 750px;*/
-/*    }*/
-/*}*/
+@media (max-width: 920px) {
+    .wrapper {
+        width: 750px;
+    }
+}
 
-/*@media (max-width: 767px) {*/
-/*    .wrapper {*/
-/*        max-width: none;*/
-/*    }*/
-/*}*/
+@media (max-width: 767px) {
+    .wrapper {
+        max-width: 320px;
+    }
+}

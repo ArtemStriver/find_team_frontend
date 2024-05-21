@@ -10,6 +10,10 @@ header {
     display: flex;
     justify-content: center;
     height: 130px;
+
+    @media (max-width: 920px) {
+        justify-content: space-between;
+    }
 }
 
 header .logo {
@@ -38,6 +42,9 @@ header .nav {
     @media (max-width: 1200px)  {
         margin-left: 20px;
         margin-right: 20px;
+    }
+    @media (max-width: 920px) {
+        display: none;
     }
 }
 
@@ -118,6 +125,10 @@ header .entry {
     box-shadow: 3px 5px 5px 0 rgba(0, 0, 0, 0.1);
     filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.05));
     transition: 0.5s ease;
+
+    @media (max-width: 920px) {
+        display: none;
+    }
 }
 
 header .entry:hover {
@@ -188,4 +199,49 @@ header .login-link {
         color: #307811;
         font-weight: 600;
     }
+}
+
+/*_______________________________*/
+
+.burger-container {
+    display: none;
+
+    @media (max-width: 920px) {
+        display: block;
+    }
+}
+
+.burger-btn {
+    width: 30px;
+    height: 30px;
+    margin: 25px 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.burger-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 4px;
+    background-color: #5A5A5A;
+}
+
+.burger-btn span {
+    content: '';
+    position: absolute;
+    top: 13px;
+    width: 30px;
+    height: 4px;
+    background-color: #5A5A5A;
+}
+
+.burger-btn:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    height: 4px;
+    background-color: #5A5A5A;
 }
