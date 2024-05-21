@@ -1,6 +1,6 @@
 
 .profile-page {
-    width: 1280px;
+    width: 100%;
     margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
@@ -30,6 +30,10 @@
     padding: 20px;
     width: 500px;
     text-align: left;
+
+    @media (max-width: 1200px) {
+        width: 450px;
+    }
 }
 
 .profile_data .name_and_change {
@@ -150,6 +154,12 @@
 .profile_hobbies {
     display: block;
     padding: 20px;
+
+    @media (max-width: 1200px) {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
 }
 
 .profile_hobbies p {
@@ -160,6 +170,11 @@
     background:  linear-gradient(to right, #305897 0%, #c18435 53%, #4F835D 100%);
     border-radius: 10px;
     margin-bottom: 20px;
+
+    @media (max-width: 1200px) {
+        width: 170px;
+        margin: auto;
+    }
 }
 
 .profile_hobbies .profile_hobby_l {
@@ -171,6 +186,10 @@
     border-radius: 10px;
     border: 2px solid #FFBB61;
     word-break: break-all;
+
+    @media (max-width: 1200px) {
+        width: 235px;
+    }
 }
 
 .profile_hobbies .profile_hobby_l_def {
@@ -186,6 +205,10 @@
     border-radius: 10px;
     border: 2px solid #95CC7D;
     word-break: break-all;
+
+    @media (max-width: 1200px) {
+        width: 235px;
+    }
 }
 
 .profile_hobbies .profile_hobby_s_def {
@@ -201,6 +224,10 @@
     border-radius: 10px;
     border: 2px solid #3E7BD8;
     word-break: break-all;
+
+    @media (max-width: 1200px) {
+        width: 235px;
+    }
 }
 
 .profile_hobbies .profile_hobby_w_def {
@@ -233,7 +260,7 @@
 /*_______________________________*/
 
 .login_form_page {
-    width: 1280px;
+    width: 100%;
     margin: 50px auto;
     display: block;
     text-align: center;

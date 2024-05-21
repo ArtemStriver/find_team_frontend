@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
 
 .teams_page {
-    width: 1280px;
+    width: 100%;
     margin: 30px auto;
     display: block;
     text-align: center;
@@ -23,6 +23,10 @@
     font-size: 65px;
     font-family: "Golos Text", sans-serif;
     font-weight: 650;
+
+    @media (max-width: 1200px) {
+        font-size: 50px;
+    }
 }
 
 .type_team_title_w {
@@ -167,7 +171,7 @@
 /*_______________________________*/
 
 .team_page {
-    width: 1280px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -266,6 +270,10 @@
     display: block;
     width: 500px;
     margin: 20px;
+
+    @media (max-width: 1200px) {
+        width: 450px;
+    }
 }
 
 .team_info .team_title_and_type {
@@ -756,7 +764,7 @@
 /*_______________________________*/
 
 .team_form_page {
-    width: 1280px;
+    width: 100%;
     margin: 50px auto;
     display: block;
     text-align: center;

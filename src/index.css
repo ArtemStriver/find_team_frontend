@@ -27,14 +27,14 @@ body {
 }
 
 .home-page {
-    width: 1280px;
+    width: 100%;
     margin: 50px auto;
     display: inline-block;
     text-align: center;
 }
 
 .form-page {
-    width: 1280px;
+    width: 100%;
     margin: 50px auto;
     display: block;
     text-align: center;
@@ -75,3 +75,21 @@ footer {
     margin-top: 75px;
     margin-bottom: 30px;
 }
+
+@media (max-width: 1200px) {
+    .wrapper {
+        width: 970px;
+    }
+}
+
+/*@media (max-width: 920px) {*/
+/*    .wrapper {*/
+/*        width: 750px;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 767px) {*/
+/*    .wrapper {*/
+/*        max-width: none;*/
+/*    }*/
+/*}*/

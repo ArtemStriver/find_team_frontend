@@ -44,7 +44,6 @@ const ChangeTeam = () => {
 
     const changeThisTeam = async () => {
         try {
-            console.log(type_team)
             await changeTeam(
                 team_data[0],
                 title,

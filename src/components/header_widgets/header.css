@@ -6,6 +6,7 @@ header a {
 }
 
 header {
+    width: 100%;
     display: flex;
     justify-content: center;
     height: 130px;
@@ -23,9 +24,6 @@ header .logo {
     border-radius: 0 0 18px 18px;
     transition: 0.5s ease;
 
-    @media (max-width: 768px) {
-        margin-right: 0;
-    }
     &:hover {
         background-image: url("../../img/logo_blank.svg");
     }
@@ -37,8 +35,9 @@ header .nav {
     margin-left: 45px;
     margin-right: 200px;
 
-    @media (max-width: 768px) {
-        display: none;
+    @media (max-width: 1200px)  {
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
@@ -46,6 +45,10 @@ header .nav-list {
     display: flex;
     list-style: none;
     gap: 40px;
+
+    @media (max-width: 1200px)  {
+        gap: 20px;
+    }
 }
 
 header .nav-item_r {

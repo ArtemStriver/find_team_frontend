@@ -9,16 +9,14 @@ import {getProfileData} from "../../http/userAPI";
 import {getMyTeams, getTeamsMyParticipation} from "../../http/teamAPI";
 // import {useParams} from "react-router-dom";
 import "./auth.css"
+import {useParams} from "react-router-dom";
 
 
 const Profile = () => {
     const {user} = useContext(Context)
     const {team} = useContext(Context)
     const [profile_data, setProfileData] = useState([])
-    const userProfileId = window.location.href.split("/")[4]
-    // TODO выяcнить почему не могу получить id через useParams
-    // const {id} = useParams()
-    // console.log(id, userProfileId)
+    const userProfileId = useParams().id
 
     useEffect(() => {
         getMyTeams().then(data => team.setMyTeams(data))
@@ -31,7 +29,10 @@ const Profile = () => {
     useEffect(() => {
         getProfileData(userProfileId).then(data => setProfileData(data))
     }, [user, userProfileId])
-    user.setProfile(profile_data)
+
+    useEffect(() => {
+        user.setProfile(profile_data)
+    }, [profile_data, user])
 
     return (
         <div className="profile-page">
@@ -46,7 +47,6 @@ const Profile = () => {
                 :
                 <div></div>
             }
-
         </div>
     );
 };
