@@ -1,0 +1,128 @@
+.menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: translateX(+500%);
+    z-index: 20;
+    transition: all 0.2s;
+}
+
+.menu.active {
+    transform: translateX(0);
+}
+
+.blur {
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-color: rgba(90, 90, 90, 95%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s;
+
+    @media (max-width: 700px) {
+        width: 50%;
+    }
+
+    @media (max-width: 600px) {
+        width: 70%;
+    }
+}
+
+.menu__header {
+    padding: 20px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+    border-bottom: 1px solid white;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.menu__content ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__content ul li {
+    margin: 10px;
+}
+
+.menu__content ul li a {
+    color: #5A5A5A;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    transition: all 0.1s;
+
+    &:hover {
+        color: #353535;
+    }
+    @media screen {
+        color: #000;
+    }
+}
+
+.menu__main-items {
+    background:  linear-gradient(to right, #4881d5 0%, #efb569 53%, #b1e699 100%);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.menu__items {
+    background:  white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.menu__content .btn-create {
+    display: block;
+    border: 3px solid white;
+    padding: 2px;
+    border-radius: 8px;
+}
+
+.menu__content .btn-leave {
+    color: #ae2020;
+    font-size: 1.5rem;
+}
+
+.menu__content .style-work {
+    color: #3376dd;
+}
+
+.menu__content .style-lifestyle {
+    color: #f4a946;
+}
+
+.menu__content .style-sport {
+    color: #6ea855;
+}
+
+/*.menu__barrier {*/
+/*    padding: 10px;*/
+/*    width: 30px;*/
+/*    height: 4px;*/
+/*    background-color: white;*/
+/*}*/
