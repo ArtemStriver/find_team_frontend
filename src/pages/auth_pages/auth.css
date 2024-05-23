@@ -7,10 +7,18 @@
     text-align: center;
     font-family: "Golos Text", sans-serif;
     color: #090909;
+    justify-content: center;
 }
 
 .profile-page .profile_image {
     padding: 20px;
+
+    @media (max-width: 880px) {
+        padding: 10px;
+    }
+    @media (max-width: 760px) {
+        padding: 5px;
+    }
 }
 
 .profile-page .profile_image_img {
@@ -21,6 +29,15 @@
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
+
+    @media (max-width: 880px) {
+        width: 320px;
+        height: 345px;
+    }
+    @media (max-width: 760px) {
+        width: 300px;
+        height: 305px;
+    }
 }
 
 /*_______________________________*/
@@ -33,6 +50,14 @@
 
     @media (max-width: 1200px) {
         width: 450px;
+    }
+    @media (max-width: 880px) {
+        width: 320px;
+        padding: 15px;
+    }
+    @media (max-width: 760px) {
+        width: 300px;
+        padding: 10px;
     }
 }
 
@@ -77,6 +102,17 @@
     display: flex;
     flex-wrap: wrap;
     width: 460px;
+    word-break: break-all;
+
+    @media (max-width: 1200px) {
+        width: 440px;
+    }
+    @media (max-width: 880px) {
+        width: 340px;
+    }
+    @media (max-width: 760px) {
+        width: 290px;
+    }
 }
 
 .profile_data .contact_item {
@@ -140,6 +176,18 @@
     border-radius: 10px;
     padding: 10px 20px 20px 20px;
     margin-bottom: 20px;
+
+    @media (max-width: 1200px) {
+        width: 440px;
+    }
+    @media (max-width: 880px) {
+        width: 320px;
+        padding: 10px;
+    }
+    @media (max-width: 760px) {
+        width: 290px;
+        padding: 10px;
+    }
 }
 
 .profile_description p {
@@ -250,12 +298,22 @@
     background-color: white;
     border-radius: 10px;
     margin-bottom: -30px;
+
+    @media (max-width: 760px) {
+        width: 290px;
+        padding: 8px;
+        margin-left: 10px;
+    }
 }
 
 .profile-teams_title_count {
     font-family: "Floripa", sans-serif;
     font-size: 45px;
     color: #a3a0a0;
+
+    @media (max-width: 760px) {
+        font-size: 35px;
+    }
 }
 
 /*_______________________________*/
@@ -272,11 +330,26 @@
     font-family: "Floripa", serif;
     font-size: 39px;
     font-weight: 100;
+
+    @media (max-width: 760px) {
+        font-size: 28px;
+    }
+}
+
+.login_form_page .register_form_title {
+    color: #090909;
+    font-family: "Floripa", serif;
+    font-size: 39px;
+    font-weight: 100;
+
+    @media (max-width: 760px) {
+        font-size: 20px;
+    }
 }
 
 .login_form_button {
     display: block;
-    margin: 40px auto 10px;
+    margin: 40px auto 10px auto;
     width: 200px;
     height: 40px;
     text-align: center;
@@ -298,9 +371,7 @@
 .login_form_register-link {
     display: block;
     width: 300px;
-    margin-top: 25px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 25px auto 10px auto;
     padding: 5px;
     text-decoration: none;
     color: #5A5A5A;
@@ -314,9 +385,7 @@
 .login_form_change-password-link {
     display: block;
     width: 300px;
-    margin-top: 5px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: auto;
     padding: 5px;
     text-decoration: none;
     color: #5A5A5A;

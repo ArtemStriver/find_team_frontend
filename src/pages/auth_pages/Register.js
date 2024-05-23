@@ -24,7 +24,7 @@ const RegisterForm = observer(() => {
     }
     return (
         <div className="login_form_page">
-            <p>РЕГИСТРАЦИЯ</p>
+            <p className="register_form_title">РЕГИСТРАЦИЯ</p>
             <form className="some-form">
                 <input
                     className="some-input"

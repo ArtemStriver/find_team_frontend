@@ -20,7 +20,7 @@ const ChangePassword = () => {
     }
     return (
         <div className="login_form_page">
-            <p>ИЗМЕНЕНИЕ ПАРОЛЯ</p>
+            <p className='register_form_title'>ИЗМЕНЕНИЕ ПАРОЛЯ</p>
             <form className="some-form">
                 <input
                     className="some-input"

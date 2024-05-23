@@ -100,7 +100,7 @@ footer {
     }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 660px) {
     .wrapper {
         max-width: 550px;
     }
@@ -114,11 +114,11 @@ footer {
 
 @media (max-width: 450px) {
     .wrapper {
-        max-width: 380px;
+        max-width: 390px;
     }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 400px) {
     .wrapper {
         max-width: 320px;
     }
