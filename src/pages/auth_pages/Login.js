@@ -16,7 +16,6 @@ const LoginForm = observer(() => {
     const signIn = async () => {
         try {
             const response = await login(email, password)
-            console.log("OK")
             localStorage.setItem('token', response.data.access_token)
             localStorage.setItem('rstoken', response.data.refresh_token)
             user.setUser(response.data.user)
