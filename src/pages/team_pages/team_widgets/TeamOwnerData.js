@@ -16,7 +16,7 @@ const TeamOwnerData = (data) => {
                             team_data?.type_team === 'sport' ?
                                 "team_owner_data_s"
                                 :
-                                'team_owner_data'
+                                'team_owner_data_def'
                 }>
                 <div className={
                     team_data?.type_team === 'work' ?
